@@ -1,0 +1,5 @@
+/library/obj
+/library/bin/Debug/library.exe
+/library/sqlconnect.cs
+/.vs
+/library/bin/Debug/*.pdb
