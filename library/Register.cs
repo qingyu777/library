@@ -12,7 +12,7 @@ namespace library
 {
     public partial class Form3 : Form
     {
-        private Form2 anotherForm;
+        private Login anotherForm;
         public Form3()
         {
             InitializeComponent();
@@ -25,7 +25,7 @@ namespace library
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            anotherForm = new Form2();
+            anotherForm = new Login();
             this.Hide();
             anotherForm.ShowDialog();
             Application.ExitThread();
