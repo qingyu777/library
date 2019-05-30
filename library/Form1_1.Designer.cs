@@ -162,6 +162,34 @@ namespace library
             this.ResumeLayout(false);
             this.PerformLayout();
 
+            // 生成列
+            DataGridViewTextBoxColumn col1 = new DataGridViewTextBoxColumn();
+            DataGridViewTextBoxColumn col2 = new DataGridViewTextBoxColumn();
+            DataGridViewTextBoxColumn col3 = new DataGridViewTextBoxColumn();
+            DataGridViewTextBoxColumn col4 = new DataGridViewTextBoxColumn();
+            DataGridViewTextBoxColumn col5 = new DataGridViewTextBoxColumn();
+
+            col1.Name = "book_name";
+            col1.HeaderText = "书名";
+            col2.Name = "book_author";
+            col2.HeaderText = "书籍作者";
+            col3.Name = "book_type";
+            col3.HeaderText = "书籍类型";
+            col4.Name = "book_location";
+            col4.HeaderText = "书籍位置";
+            col5.Name = "book_status";
+            col5.HeaderText = "书籍是否被借阅";
+            dataGridView1.Columns.Add(col1);
+            dataGridView1.Columns.Add(col2);
+            dataGridView1.Columns.Add(col3);
+            dataGridView1.Columns.Add(col4);
+            dataGridView1.Columns.Add(col5);
+            dataGridView1.Columns[0].ReadOnly = true;
+            dataGridView1.Columns[1].ReadOnly = true;
+            dataGridView1.Columns[2].ReadOnly = true;
+            dataGridView1.Columns[3].ReadOnly = true;
+            dataGridView1.Columns[4].ReadOnly = true;
+
         }
 
         #endregion
