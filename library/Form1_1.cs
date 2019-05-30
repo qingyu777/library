@@ -74,9 +74,13 @@ namespace library
             dataGridView1.Columns[4].ReadOnly = true;
             //string[] row = { "12", "123", "1234","12345"};
             //dataGridView1.Rows.Add(row);
+            String sql = "select * from book";
             sqlconnect c = new sqlconnect();
-
-            Book[] bookResult = c.GetBookArraySerchResult(c.ExcuteOrder("select * from book", c.myCon));
+            if(textBox1.Text != null)
+            {
+                sql = "select * from book where book_name like '%" + textBox1.Text + "%'";
+            }
+            Book[] bookResult = c.GetBookArraySerchResult(c.ExcuteOrder(sql, c.myCon));
             foreach (Book book in bookResult)
             {
                 String[] bookinfo = { book.Book_name, book.Book_type, book.Book_author, book.Book_location, book.Book_number.ToString() };
