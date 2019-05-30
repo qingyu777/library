@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace library
 {
-    public partial class Form1 : Form
+    public partial class Main : Form
     {
-        private Form2 anotherForm2;
+        private Login anotherForm2;
         private Form3 anotherForm3;
-        private Form1_1 anotherForm1_1;
-        public Form1()
+        private SearchBook anotherForm1_1;
+        public Main()
         {
             InitializeComponent();
         }
@@ -27,7 +27,7 @@ namespace library
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            anotherForm2 = new Form2();
+            anotherForm2 = new Login();
             this.Hide();
             anotherForm2.ShowDialog();
             Application.ExitThread();
@@ -60,7 +60,7 @@ namespace library
 
         private void Button3_Click(object sender, EventArgs e)
         {
-            anotherForm1_1 = new Form1_1();
+            anotherForm1_1 = new SearchBook();
             this.Hide();
             anotherForm1_1.ShowDialog();
             Application.ExitThread();

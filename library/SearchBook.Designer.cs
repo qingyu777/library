@@ -2,7 +2,7 @@
 
 namespace library
 {
-    partial class Form1_1
+    partial class SearchBook
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@ namespace library
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1_1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchBook));
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -41,6 +41,11 @@ namespace library
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.book_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.book_author = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.book_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.book_location = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.book_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStripForBooks = new System.Windows.Forms.ContextMenuStrip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -48,7 +53,7 @@ namespace library
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(568, 13);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(68, 29);
             this.button1.TabIndex = 0;
@@ -59,7 +64,7 @@ namespace library
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(568, 46);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(68, 30);
             this.button2.TabIndex = 1;
@@ -101,7 +106,7 @@ namespace library
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(112, 14);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(153, 21);
             this.textBox1.TabIndex = 10;
@@ -109,7 +114,7 @@ namespace library
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(378, 14);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(153, 21);
             this.textBox2.TabIndex = 11;
@@ -117,29 +122,61 @@ namespace library
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(112, 44);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(153, 21);
             this.textBox3.TabIndex = 12;
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.book_name,
+            this.book_author,
+            this.book_type,
+            this.book_location,
+            this.book_status});
             this.dataGridView1.Location = new System.Drawing.Point(41, 98);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 27;
             this.dataGridView1.Size = new System.Drawing.Size(559, 317);
             this.dataGridView1.TabIndex = 18;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick_1);
             // 
+            // book_name
+            // 
+            this.book_name.HeaderText = "书名";
+            this.book_name.Name = "book_name";
+            // 
+            // book_author
+            // 
+            this.book_author.HeaderText = "书籍作者";
+            this.book_author.Name = "book_author";
+            // 
+            // book_type
+            // 
+            this.book_type.HeaderText = "书籍类型";
+            this.book_type.Name = "book_type";
+            // 
+            // book_location
+            // 
+            this.book_location.HeaderText = "书籍位置";
+            this.book_location.Name = "book_location";
+            // 
+            // book_status
+            // 
+            this.book_status.HeaderText = "书籍是否被借阅";
+            this.book_status.Name = "book_status";
+            // 
             // contextMenuStripForBooks
             // 
             this.contextMenuStripForBooks.Name = "contextMenuStripForBooks";
-            this.contextMenuStripForBooks.Size = new System.Drawing.Size(181, 26);
+            this.contextMenuStripForBooks.Size = new System.Drawing.Size(61, 4);
             // 
-            // Form1_1
+            // SearchBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -154,41 +191,13 @@ namespace library
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "Form1_1";
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "SearchBook";
             this.Text = "查找书籍";
             this.Load += new System.EventHandler(this.Form1_1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
-            // 生成列
-            DataGridViewTextBoxColumn col1 = new DataGridViewTextBoxColumn();
-            DataGridViewTextBoxColumn col2 = new DataGridViewTextBoxColumn();
-            DataGridViewTextBoxColumn col3 = new DataGridViewTextBoxColumn();
-            DataGridViewTextBoxColumn col4 = new DataGridViewTextBoxColumn();
-            DataGridViewTextBoxColumn col5 = new DataGridViewTextBoxColumn();
-
-            col1.Name = "book_name";
-            col1.HeaderText = "书名";
-            col2.Name = "book_author";
-            col2.HeaderText = "书籍作者";
-            col3.Name = "book_type";
-            col3.HeaderText = "书籍类型";
-            col4.Name = "book_location";
-            col4.HeaderText = "书籍位置";
-            col5.Name = "book_status";
-            col5.HeaderText = "书籍是否被借阅";
-            dataGridView1.Columns.Add(col1);
-            dataGridView1.Columns.Add(col2);
-            dataGridView1.Columns.Add(col3);
-            dataGridView1.Columns.Add(col4);
-            dataGridView1.Columns.Add(col5);
-            dataGridView1.Columns[0].ReadOnly = true;
-            dataGridView1.Columns[1].ReadOnly = true;
-            dataGridView1.Columns[2].ReadOnly = true;
-            dataGridView1.Columns[3].ReadOnly = true;
-            dataGridView1.Columns[4].ReadOnly = true;
 
         }
 
@@ -204,5 +213,10 @@ namespace library
         private System.Windows.Forms.TextBox textBox3;
         private DataGridView dataGridView1;
         private ContextMenuStrip contextMenuStripForBooks;
+        private DataGridViewTextBoxColumn book_name;
+        private DataGridViewTextBoxColumn book_author;
+        private DataGridViewTextBoxColumn book_type;
+        private DataGridViewTextBoxColumn book_location;
+        private DataGridViewTextBoxColumn book_status;
     }
 }

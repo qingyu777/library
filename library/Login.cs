@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace library
 {
-    public partial class Form2 : Form
+    public partial class Login : Form
     {
         Form4 anotherForm4;
         Form5 anotherForm5;
-        public Form2()
+        public Login()
         {
             InitializeComponent();
         }

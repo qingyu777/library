@@ -8,20 +8,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Web;
 
 namespace library
 {
-    public partial class Form1_1 : Form
+    public partial class SearchBook : Form
     {
-        private Form1 anotherForm1;
-        public Form1_1()
+        private Main anotherForm1;
+        public SearchBook()
         {
             InitializeComponent();
         }
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            anotherForm1 = new Form1();
+            anotherForm1 = new Main();
             this.Hide();
             anotherForm1.ShowDialog();
             Application.ExitThread();
@@ -49,19 +50,37 @@ namespace library
 
             //string[] row = { "12", "123", "1234","12345"};
             //dataGridView1.Rows.Add(row);
-            String sql = "select * from book";
+
+            dataGridView1.Rows.Clear();
+
             sqlconnect c = new sqlconnect();
-            if(textBox1.Text != null)
+            Encoding unicode = Encoding.Unicode;
+            String sql = "";
+            if (textBox1.Text != string.Empty)
             {
                 sql = "select * from book where book_name like '%" + textBox1.Text + "%'";
-                Console.WriteLine(sql);
             }
-            Book[] bookResult = c.GetBookArraySerchResult(c.ExcuteOrder(sql, c.myCon));
-            foreach (Book book in bookResult)
+            else
             {
-                String[] bookinfo = { book.Book_name, book.Book_type, book.Book_author, book.Book_location, book.Book_number.ToString() };
-                dataGridView1.Rows.Add(bookinfo);
+                sql = "select * from book";
+                sql = "select 1,'高','3','4','5',10";
             }
+            Console.WriteLine(sql);
+
+            Book[] bookResult = c.GetBookArraySerchResult(c.ExcuteOrder(sql, c.myCon));
+            if (bookResult.Length > 0)
+            {
+                foreach (Book book in bookResult)
+                {
+                    String[] bookinfo = { book.Book_name, book.Book_type, book.Book_author, book.Book_location, book.Book_number.ToString() };
+                    dataGridView1.Rows.Add(bookinfo);
+                }
+            }
+            else
+            {
+                MessageBox.Show("查询结果为空");
+            }
+
             
             c.CloseMySqlConnection();
         }
