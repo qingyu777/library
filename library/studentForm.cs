@@ -23,8 +23,7 @@ namespace library
             this.id = user_id;
             this.username = yhm;
             studentUsername.Text = yhm;
-            studentId.Text = id.ToString();
-            
+            label4.Text = user_id.ToString();
         }
 
         private void TabPage1_Click(object sender, EventArgs e)
@@ -134,6 +133,23 @@ namespace library
                 MessageBox.Show("查询结果为空");
             }
             c.CloseMySqlConnection();
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            SqlConnect c = new SqlConnect();
+            if(c.IsSerchResult(c.ExcuteOrder("select * from student where student_id = "+this.id+" and student_passward = '" + oldPasswardInput .Text+ "'", c.myCon)) > 0)
+            {
+                MySqlCommand result = c.ExcuteOrder("UPDATE student set student_passward = '"+newPasswardInput.Text+"' where student_id = "+ this.id , c.myCon);
+                if(c.GetDelInsertUpdateResult(result) > 0)
+                {
+                    MessageBox.Show("修改密码成功！");
+                }
+                else
+                    MessageBox.Show("请输入正确的密码格式！");
+            }
+            else
+                MessageBox.Show("密码输入错误！");
         }
     }
 }

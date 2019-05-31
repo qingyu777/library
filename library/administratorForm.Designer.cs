@@ -43,6 +43,8 @@ namespace library
             this.book_location = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.book_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.book_left_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.menuForAdmin = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.删除书籍信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bookLocationInput = new System.Windows.Forms.TextBox();
             this.bookTypeInput = new System.Windows.Forms.TextBox();
             this.bookAuthorInput = new System.Windows.Forms.TextBox();
@@ -56,12 +58,12 @@ namespace library
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.button5 = new System.Windows.Forms.Button();
-            this.textBox19 = new System.Windows.Forms.TextBox();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.updateBookNumberInput = new System.Windows.Forms.TextBox();
+            this.updateBookLocationInput = new System.Windows.Forms.TextBox();
+            this.updateBookAuthorInput = new System.Windows.Forms.TextBox();
+            this.updateBookTypeInput = new System.Windows.Forms.TextBox();
+            this.updateBookNameInput = new System.Windows.Forms.TextBox();
+            this.updateBookIdIput = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
@@ -69,26 +71,22 @@ namespace library
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.insertBookAuthorInput = new System.Windows.Forms.TextBox();
+            this.insertBookNumberInput = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.insertBookLocationInput = new System.Windows.Forms.TextBox();
+            this.insertBookTypeInput = new System.Windows.Forms.TextBox();
+            this.insertBookNameInput = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.adminUsername = new System.Windows.Forms.Label();
-            this.menuForAdmin = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.删除书籍信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewForAdmin)).BeginInit();
-            this.tabPage2.SuspendLayout();
             this.menuForAdmin.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -208,6 +206,20 @@ namespace library
             this.book_left_number.ReadOnly = true;
             this.book_left_number.Width = 89;
             // 
+            // menuForAdmin
+            // 
+            this.menuForAdmin.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuForAdmin.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.删除书籍信息ToolStripMenuItem});
+            this.menuForAdmin.Name = "menuForAdmin";
+            this.menuForAdmin.Size = new System.Drawing.Size(169, 28);
+            // 
+            // 删除书籍信息ToolStripMenuItem
+            // 
+            this.删除书籍信息ToolStripMenuItem.Name = "删除书籍信息ToolStripMenuItem";
+            this.删除书籍信息ToolStripMenuItem.Size = new System.Drawing.Size(168, 24);
+            this.删除书籍信息ToolStripMenuItem.Text = "删除书籍信息";
+            // 
             // bookLocationInput
             // 
             this.bookLocationInput.Location = new System.Drawing.Point(450, 41);
@@ -302,12 +314,12 @@ namespace library
             // 
             this.tabPage2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabPage2.BackgroundImage")));
             this.tabPage2.Controls.Add(this.button5);
-            this.tabPage2.Controls.Add(this.textBox19);
-            this.tabPage2.Controls.Add(this.textBox18);
-            this.tabPage2.Controls.Add(this.textBox17);
-            this.tabPage2.Controls.Add(this.textBox16);
-            this.tabPage2.Controls.Add(this.textBox15);
-            this.tabPage2.Controls.Add(this.textBox14);
+            this.tabPage2.Controls.Add(this.updateBookNumberInput);
+            this.tabPage2.Controls.Add(this.updateBookLocationInput);
+            this.tabPage2.Controls.Add(this.updateBookAuthorInput);
+            this.tabPage2.Controls.Add(this.updateBookTypeInput);
+            this.tabPage2.Controls.Add(this.updateBookNameInput);
+            this.tabPage2.Controls.Add(this.updateBookIdIput);
             this.tabPage2.Controls.Add(this.label22);
             this.tabPage2.Controls.Add(this.label21);
             this.tabPage2.Controls.Add(this.label20);
@@ -315,18 +327,16 @@ namespace library
             this.tabPage2.Controls.Add(this.label18);
             this.tabPage2.Controls.Add(this.label17);
             this.tabPage2.Controls.Add(this.label16);
-            this.tabPage2.Controls.Add(this.textBox13);
-            this.tabPage2.Controls.Add(this.textBox1);
+            this.tabPage2.Controls.Add(this.insertBookAuthorInput);
+            this.tabPage2.Controls.Add(this.insertBookNumberInput);
             this.tabPage2.Controls.Add(this.label15);
             this.tabPage2.Controls.Add(this.button2);
-            this.tabPage2.Controls.Add(this.textBox11);
-            this.tabPage2.Controls.Add(this.textBox10);
-            this.tabPage2.Controls.Add(this.textBox9);
-            this.tabPage2.Controls.Add(this.textBox8);
+            this.tabPage2.Controls.Add(this.insertBookLocationInput);
+            this.tabPage2.Controls.Add(this.insertBookTypeInput);
+            this.tabPage2.Controls.Add(this.insertBookNameInput);
             this.tabPage2.Controls.Add(this.label12);
             this.tabPage2.Controls.Add(this.label11);
             this.tabPage2.Controls.Add(this.label10);
-            this.tabPage2.Controls.Add(this.label9);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -343,48 +353,49 @@ namespace library
             this.button5.TabIndex = 25;
             this.button5.Text = "更改：";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.Button5_Click);
             // 
-            // textBox19
+            // updateBookNumberInput
             // 
-            this.textBox19.Location = new System.Drawing.Point(523, 219);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(158, 25);
-            this.textBox19.TabIndex = 24;
+            this.updateBookNumberInput.Location = new System.Drawing.Point(523, 219);
+            this.updateBookNumberInput.Name = "updateBookNumberInput";
+            this.updateBookNumberInput.Size = new System.Drawing.Size(158, 25);
+            this.updateBookNumberInput.TabIndex = 24;
             // 
-            // textBox18
+            // updateBookLocationInput
             // 
-            this.textBox18.Location = new System.Drawing.Point(523, 182);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(158, 25);
-            this.textBox18.TabIndex = 23;
+            this.updateBookLocationInput.Location = new System.Drawing.Point(523, 182);
+            this.updateBookLocationInput.Name = "updateBookLocationInput";
+            this.updateBookLocationInput.Size = new System.Drawing.Size(158, 25);
+            this.updateBookLocationInput.TabIndex = 23;
             // 
-            // textBox17
+            // updateBookAuthorInput
             // 
-            this.textBox17.Location = new System.Drawing.Point(523, 138);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(158, 25);
-            this.textBox17.TabIndex = 22;
+            this.updateBookAuthorInput.Location = new System.Drawing.Point(523, 138);
+            this.updateBookAuthorInput.Name = "updateBookAuthorInput";
+            this.updateBookAuthorInput.Size = new System.Drawing.Size(158, 25);
+            this.updateBookAuthorInput.TabIndex = 22;
             // 
-            // textBox16
+            // updateBookTypeInput
             // 
-            this.textBox16.Location = new System.Drawing.Point(523, 105);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(158, 25);
-            this.textBox16.TabIndex = 21;
+            this.updateBookTypeInput.Location = new System.Drawing.Point(523, 105);
+            this.updateBookTypeInput.Name = "updateBookTypeInput";
+            this.updateBookTypeInput.Size = new System.Drawing.Size(158, 25);
+            this.updateBookTypeInput.TabIndex = 21;
             // 
-            // textBox15
+            // updateBookNameInput
             // 
-            this.textBox15.Location = new System.Drawing.Point(523, 72);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(158, 25);
-            this.textBox15.TabIndex = 20;
+            this.updateBookNameInput.Location = new System.Drawing.Point(523, 72);
+            this.updateBookNameInput.Name = "updateBookNameInput";
+            this.updateBookNameInput.Size = new System.Drawing.Size(158, 25);
+            this.updateBookNameInput.TabIndex = 20;
             // 
-            // textBox14
+            // updateBookIdIput
             // 
-            this.textBox14.Location = new System.Drawing.Point(523, 35);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(158, 25);
-            this.textBox14.TabIndex = 19;
+            this.updateBookIdIput.Location = new System.Drawing.Point(523, 35);
+            this.updateBookIdIput.Name = "updateBookIdIput";
+            this.updateBookIdIput.Size = new System.Drawing.Size(158, 25);
+            this.updateBookIdIput.TabIndex = 19;
             // 
             // label22
             // 
@@ -449,19 +460,19 @@ namespace library
             this.label16.TabIndex = 12;
             this.label16.Text = "书籍作者：";
             // 
-            // textBox13
+            // insertBookAuthorInput
             // 
-            this.textBox13.Location = new System.Drawing.Point(170, 141);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(180, 25);
-            this.textBox13.TabIndex = 11;
+            this.insertBookAuthorInput.Location = new System.Drawing.Point(170, 141);
+            this.insertBookAuthorInput.Name = "insertBookAuthorInput";
+            this.insertBookAuthorInput.Size = new System.Drawing.Size(180, 25);
+            this.insertBookAuthorInput.TabIndex = 11;
             // 
-            // textBox1
+            // insertBookNumberInput
             // 
-            this.textBox1.Location = new System.Drawing.Point(170, 219);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(180, 25);
-            this.textBox1.TabIndex = 10;
+            this.insertBookNumberInput.Location = new System.Drawing.Point(170, 219);
+            this.insertBookNumberInput.Name = "insertBookNumberInput";
+            this.insertBookNumberInput.Size = new System.Drawing.Size(180, 25);
+            this.insertBookNumberInput.TabIndex = 10;
             // 
             // label15
             // 
@@ -482,33 +493,26 @@ namespace library
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.Button2_Click_1);
             // 
-            // textBox11
+            // insertBookLocationInput
             // 
-            this.textBox11.Location = new System.Drawing.Point(170, 182);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(180, 25);
-            this.textBox11.TabIndex = 7;
+            this.insertBookLocationInput.Location = new System.Drawing.Point(170, 182);
+            this.insertBookLocationInput.Name = "insertBookLocationInput";
+            this.insertBookLocationInput.Size = new System.Drawing.Size(180, 25);
+            this.insertBookLocationInput.TabIndex = 7;
             // 
-            // textBox10
+            // insertBookTypeInput
             // 
-            this.textBox10.Location = new System.Drawing.Point(170, 102);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(180, 25);
-            this.textBox10.TabIndex = 6;
+            this.insertBookTypeInput.Location = new System.Drawing.Point(170, 102);
+            this.insertBookTypeInput.Name = "insertBookTypeInput";
+            this.insertBookTypeInput.Size = new System.Drawing.Size(180, 25);
+            this.insertBookTypeInput.TabIndex = 6;
             // 
-            // textBox9
+            // insertBookNameInput
             // 
-            this.textBox9.Location = new System.Drawing.Point(170, 69);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(180, 25);
-            this.textBox9.TabIndex = 5;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(170, 35);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(180, 25);
-            this.textBox8.TabIndex = 4;
+            this.insertBookNameInput.Location = new System.Drawing.Point(170, 69);
+            this.insertBookNameInput.Name = "insertBookNameInput";
+            this.insertBookNameInput.Size = new System.Drawing.Size(180, 25);
+            this.insertBookNameInput.TabIndex = 5;
             // 
             // label12
             // 
@@ -522,7 +526,7 @@ namespace library
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(75, 112);
+            this.label11.Location = new System.Drawing.Point(75, 108);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(82, 15);
             this.label11.TabIndex = 2;
@@ -537,15 +541,6 @@ namespace library
             this.label10.TabIndex = 1;
             this.label10.Text = "书籍名：";
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(84, 38);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(68, 15);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "书籍id：";
-            // 
             // adminUsername
             // 
             this.adminUsername.AutoSize = true;
@@ -554,20 +549,6 @@ namespace library
             this.adminUsername.Size = new System.Drawing.Size(63, 15);
             this.adminUsername.TabIndex = 7;
             this.adminUsername.Text = "label14";
-            // 
-            // menuForAdmin
-            // 
-            this.menuForAdmin.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuForAdmin.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.删除书籍信息ToolStripMenuItem});
-            this.menuForAdmin.Name = "menuForAdmin";
-            this.menuForAdmin.Size = new System.Drawing.Size(169, 28);
-            // 
-            // 删除书籍信息ToolStripMenuItem
-            // 
-            this.删除书籍信息ToolStripMenuItem.Name = "删除书籍信息ToolStripMenuItem";
-            this.删除书籍信息ToolStripMenuItem.Size = new System.Drawing.Size(168, 24);
-            this.删除书籍信息ToolStripMenuItem.Text = "删除书籍信息";
             // 
             // AdministratorForm
             // 
@@ -584,9 +565,9 @@ namespace library
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewForAdmin)).EndInit();
+            this.menuForAdmin.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            this.menuForAdmin.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -603,23 +584,21 @@ namespace library
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox insertBookLocationInput;
+        private System.Windows.Forms.TextBox insertBookTypeInput;
+        private System.Windows.Forms.TextBox insertBookNameInput;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label adminUsername;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TextBox textBox19;
-        private System.Windows.Forms.TextBox textBox18;
-        private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox updateBookNumberInput;
+        private System.Windows.Forms.TextBox updateBookLocationInput;
+        private System.Windows.Forms.TextBox updateBookAuthorInput;
+        private System.Windows.Forms.TextBox updateBookTypeInput;
+        private System.Windows.Forms.TextBox updateBookNameInput;
+        private System.Windows.Forms.TextBox updateBookIdIput;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label20;
@@ -627,8 +606,8 @@ namespace library
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox insertBookAuthorInput;
+        private System.Windows.Forms.TextBox insertBookNumberInput;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox bookLocationInput;
         private System.Windows.Forms.TextBox bookTypeInput;

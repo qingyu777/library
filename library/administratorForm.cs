@@ -95,12 +95,47 @@ namespace library
 
         private void Button2_Click_1(object sender, EventArgs e)
         {
-
+            SqlConnect c = new SqlConnect();
+            if(insertBookNameInput.Text.Length == 0 || insertBookTypeInput.Text.Length == 0 || insertBookAuthorInput.Text.Length == 0|| insertBookLocationInput.Text.Length == 0||insertBookNumberInput.Text.Length ==0)
+                MessageBox.Show("请输入完整书籍信息！");
+            else
+            {
+                String sql = "INSERT INTO book VALUES(NULL,'"+ insertBookNameInput.Text+"','"+insertBookTypeInput.Text+"','"+insertBookAuthorInput.Text+"','"+insertBookLocationInput.Text+"','"+insertBookNumberInput.Text+"')";
+                MySqlCommand cmd = c.ExcuteOrder(sql, c.myCon);
+                if(c.GetDelInsertUpdateResult(cmd) > 0)
+                    MessageBox.Show("成功插入书籍！");
+                else
+                    MessageBox.Show("请输入正确的书籍信息格式！");
+            }
+            
         }
-
+        
         private void TabPage1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Button5_Click(object sender, EventArgs e)
+        {
+            SqlConnect c = new SqlConnect();
+            if(c.IsSerchResult(c.ExcuteOrder("select * from book where book_id = '"+updateBookIdIput.Text+"'",c.myCon))>0)
+            {
+                Console.WriteLine("select * from book where book_id = '" + updateBookIdIput.Text + "'");
+                if (updateBookNameInput.Text.Length == 0 || updateBookTypeInput.Text.Length == 0 || updateBookAuthorInput.Text.Length == 0 || updateBookLocationInput.Text.Length == 0 || updateBookNumberInput.Text.Length == 0)
+                    MessageBox.Show("请输入完整书籍信息！");
+                else
+                {
+                    String sql = "UPDATE book set book_name = '"+ updateBookNameInput.Text + "',book_type ='"+ updateBookTypeInput.Text + "', book_author = '"+ updateBookAuthorInput.Text + "', book_number = "+ updateBookNumberInput.Text + ", book_location = '"+ updateBookLocationInput.Text + "' where book_id ="+updateBookIdIput.Text;
+                    MySqlCommand cmd = c.ExcuteOrder(sql, c.myCon);
+                    if (c.GetDelInsertUpdateResult(cmd) > 0)
+                        MessageBox.Show("成功更改书籍信息！");
+                    else
+                        MessageBox.Show("请输入正确的书籍信息格式并输入完整书籍信息！");
+                }
+                
+            }
+            else
+                MessageBox.Show("不存在该书籍id！");
         }
     }
 }

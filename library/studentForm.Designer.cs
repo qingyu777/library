@@ -59,8 +59,8 @@ namespace library
             this.borrowedDatetime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.newPasswardInput = new System.Windows.Forms.TextBox();
+            this.oldPasswardInput = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.book_author_Borrowed = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,7 +68,7 @@ namespace library
             this.book_location_Borrowed = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.studentUsername = new System.Windows.Forms.Label();
-            this.studentId = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.修改密码.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -321,8 +321,8 @@ namespace library
             // 
             this.tabPage3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabPage3.BackgroundImage")));
             this.tabPage3.Controls.Add(this.button2);
-            this.tabPage3.Controls.Add(this.textBox8);
-            this.tabPage3.Controls.Add(this.textBox7);
+            this.tabPage3.Controls.Add(this.newPasswardInput);
+            this.tabPage3.Controls.Add(this.oldPasswardInput);
             this.tabPage3.Controls.Add(this.label10);
             this.tabPage3.Controls.Add(this.label9);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
@@ -341,20 +341,21 @@ namespace library
             this.button2.TabIndex = 4;
             this.button2.Text = "确认修改";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
-            // textBox8
+            // newPasswardInput
             // 
-            this.textBox8.Location = new System.Drawing.Point(179, 108);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(201, 25);
-            this.textBox8.TabIndex = 3;
+            this.newPasswardInput.Location = new System.Drawing.Point(179, 108);
+            this.newPasswardInput.Name = "newPasswardInput";
+            this.newPasswardInput.Size = new System.Drawing.Size(201, 25);
+            this.newPasswardInput.TabIndex = 3;
             // 
-            // textBox7
+            // oldPasswardInput
             // 
-            this.textBox7.Location = new System.Drawing.Point(179, 73);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(201, 25);
-            this.textBox7.TabIndex = 2;
+            this.oldPasswardInput.Location = new System.Drawing.Point(179, 73);
+            this.oldPasswardInput.Name = "oldPasswardInput";
+            this.oldPasswardInput.Size = new System.Drawing.Size(201, 25);
+            this.oldPasswardInput.TabIndex = 2;
             // 
             // label10
             // 
@@ -405,23 +406,23 @@ namespace library
             this.studentUsername.Text = "label12";
             this.studentUsername.Click += new System.EventHandler(this.StudentUsername_Click);
             // 
-            // studentId
+            // label3
             // 
-            this.studentId.AutoSize = true;
-            this.studentId.Location = new System.Drawing.Point(618, 4);
-            this.studentId.Name = "studentId";
-            this.studentId.Size = new System.Drawing.Size(55, 15);
-            this.studentId.TabIndex = 22;
-            this.studentId.Text = "label4";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(524, 4);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(52, 15);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "编号：";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(524, 4);
+            this.label4.Location = new System.Drawing.Point(610, 4);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 15);
-            this.label4.TabIndex = 23;
-            this.label4.Text = "编号：";
+            this.label4.Size = new System.Drawing.Size(55, 15);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "label4";
             // 
             // StudentForm
             // 
@@ -430,7 +431,7 @@ namespace library
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(807, 579);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.studentId);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.studentUsername);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.修改密码);
@@ -460,8 +461,8 @@ namespace library
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button searchBookButton;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox newPasswardInput;
+        private System.Windows.Forms.TextBox oldPasswardInput;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label11;
@@ -481,13 +482,13 @@ namespace library
         private ContextMenuStrip menuForUserSearchedBooks;
         private ToolStripMenuItem 借阅书籍ToolStripMenuItem;
         private ToolStripMenuItem toolStripMenuItem2;
-        private Label studentId;
-        private Label label4;
         private DataGridViewTextBoxColumn borrow_record_id;
         private DataGridViewTextBoxColumn book_name_Borrowed;
         private DataGridViewTextBoxColumn book_author_Borrowed;
         private DataGridViewTextBoxColumn book_type_Borrowed;
         private DataGridViewTextBoxColumn book_location_Borrowed;
         private DataGridViewTextBoxColumn borrowedDatetime;
+        private Label label3;
+        private Label label4;
     }
 }

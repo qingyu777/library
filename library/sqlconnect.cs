@@ -36,7 +36,7 @@ namespace library
             MySqlCommand myCom = new MySqlCommand(sql, myCon);
             return myCom;
         }
-        public int FindUserByUsernameAndPassward(MySqlCommand myCom)
+        public int FindUserByUsernameAndPassward(MySqlCommand myCom)   //通过账号密码找到学生id
         {
             try
             {
