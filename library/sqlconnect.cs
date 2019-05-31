@@ -79,13 +79,15 @@ namespace library
                 {
                     if (msDr.HasRows)
                     {
-                        Book book = new Book();
-                        book.Book_id = msDr.GetInt32(0);
-                        book.Book_name = msDr.GetString(1).Trim();
-                        book.Book_type = msDr.GetString(2).Trim();
-                        book.Book_author = msDr.GetString(3).Trim();
-                        book.Book_location = msDr.GetString(4).Trim();
-                        book.Book_number = msDr.GetInt32(5);
+                        Book book = new Book
+                        {
+                            Book_id = msDr.GetInt32(0),
+                            Book_name = msDr.GetString(1).Trim(),
+                            Book_type = msDr.GetString(2).Trim(),
+                            Book_author = msDr.GetString(3).Trim(),
+                            Book_location = msDr.GetString(4).Trim(),
+                            Book_number = msDr.GetInt32(5)
+                        };
                         books.Add(book);
 
                     }
@@ -106,7 +108,7 @@ namespace library
             }
         }
 
-        public int isSerchResult(MySqlCommand myCom)    //判断查询是否有结果  
+        public int IsSerchResult(MySqlCommand myCom)    //判断查询是否有结果  
         {
             try
             {

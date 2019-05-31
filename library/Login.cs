@@ -27,14 +27,14 @@ namespace library
 
             //"select * FROM admin where admin_username = '" + textBox1.Text + "'and admin_passward ='' or 'jjj'='jjj'"
 
-            if (c.isSerchResult(c.ExcuteOrder("select * FROM admin where admin_username = '" + usernameInput.Text + "'and admin_passward ='" + passwardInput.Text + "'", c.myCon))>0)
+            if (c.IsSerchResult(c.ExcuteOrder("select * FROM admin where admin_username = '" + usernameInput.Text + "'and admin_passward ='" + passwardInput.Text + "'", c.myCon))>0)
             {
                 anotherForm4 = new AdministratorForm();
                 this.Hide();
                 anotherForm4.ShowDialog();
                 Application.ExitThread();
             }
-            else if (c.isSerchResult(c.ExcuteOrder("select * FROM admin where admin_username = '" + usernameInput.Text + "'", c.myCon))>0)
+            else if (c.IsSerchResult(c.ExcuteOrder("select * FROM admin where admin_username = '" + usernameInput.Text + "'", c.myCon))>0)
             {
                 MessageBox.Show("密码错误");
             }
@@ -59,14 +59,14 @@ namespace library
 
             //"select * FROM admin where admin_username = '" + textBox1.Text + "'and admin_passward ='' or 'jjj'='jjj'"
 
-            if (c.isSerchResult(c.ExcuteOrder("select * FROM student where student_username = '" + usernameInput.Text + "'and student_passward ='" + passwardInput.Text + "'", c.myCon)) > 0)
+            if (c.IsSerchResult(c.ExcuteOrder("select * FROM student where student_username = '" + usernameInput.Text + "'and student_passward ='" + passwardInput.Text + "'", c.myCon)) > 0)
             {
                 anotherForm5 = new StudentForm();
                 this.Hide();
                 anotherForm5.ShowDialog();
                 Application.ExitThread();
             }
-            else if (c.isSerchResult(c.ExcuteOrder("select * FROM student where student_username = '" + usernameInput.Text + "'", c.myCon)) > 0)
+            else if (c.IsSerchResult(c.ExcuteOrder("select * FROM student where student_username = '" + usernameInput.Text + "'", c.myCon)) > 0)
             {
                 MessageBox.Show("密码错误");
             }

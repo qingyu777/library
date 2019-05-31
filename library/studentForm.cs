@@ -48,7 +48,6 @@ namespace library
             dataGridViewUserSearchBookResult.Rows.Clear();
 
             SqlConnect c = new SqlConnect();
-            Encoding unicode = Encoding.Unicode;
             String sql = "SELECT * from book where book_name like '%" + bookNameInput.Text + "%' and book_type like '%" + bookTypeInput.Text + "%' and book_author like '%" + bookAuthorInput.Text + "%'";
             Console.WriteLine(sql);
             MySqlCommand cmd = new MySqlCommand(sql, c.myCon);
@@ -57,7 +56,7 @@ namespace library
             {
                 foreach (Book book in bookResult)
                 {
-                    String[] bookinfo = { book.Book_name, book.Book_type, book.Book_author, book.Book_location, book.Book_number.ToString() };
+                    String[] bookinfo = { book.Book_id.ToString(), book.Book_name, book.Book_type, book.Book_author, book.Book_location, book.Book_number.ToString() };
                     dataGridViewUserSearchBookResult.Rows.Add(bookinfo);
                 }
             }
@@ -81,7 +80,7 @@ namespace library
         }
 
         //在右键点击时，将当前行选中
-        private void dataGridViewUserSearchBookResult_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        private void DataGridViewUserSearchBookResult_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.Button == System.Windows.Forms.MouseButtons.Right && e.RowIndex >= 0)
             {
@@ -92,6 +91,11 @@ namespace library
                 }
                 menuForUserSearchedBooks.Show(MousePosition.X, MousePosition.Y);
             }
+        }
+
+        private void 借阅书籍ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

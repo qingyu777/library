@@ -32,7 +32,7 @@ namespace library
             {
                 MessageBox.Show("请输入完整的注册信息！");
             }
-            else if(c.isSerchResult(c.ExcuteOrder("select * from student where student_username = '" + userNameInput.Text + "'", c.myCon)) > 0)
+            else if(c.IsSerchResult(c.ExcuteOrder("select * from student where student_username = '" + userNameInput.Text + "'", c.myCon)) > 0)
             {
                 MessageBox.Show("该账号已被注册");
                 userNameInput.Clear();

@@ -55,7 +55,6 @@ namespace library
             dataGridView1.Rows.Clear();
 
             SqlConnect c = new SqlConnect();
-            Encoding unicode = Encoding.Unicode;
             String sql = "SELECT * from book where book_name like '%" + bookNameInput.Text + "%' and book_type like '%" + bookTypeInput.Text + "%' and book_author like '%" + bookAuthorInput.Text + "%'";
             Console.WriteLine(sql);
             MySqlCommand cmd = new MySqlCommand(sql, c.myCon);
@@ -64,7 +63,7 @@ namespace library
             {
                 foreach (Book book in bookResult)
                 {
-                    String[] bookinfo = { book.Book_name, book.Book_type, book.Book_author, book.Book_location, book.Book_number.ToString() };
+                    String[] bookinfo = { book.Book_id.ToString(), book.Book_name, book.Book_type, book.Book_author, book.Book_location, book.Book_number.ToString() };
                     dataGridView1.Rows.Add(bookinfo);
                 }
             }
