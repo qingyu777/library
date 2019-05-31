@@ -50,7 +50,7 @@ namespace library
 
 
             //string[] row = { "12", "123", "1234","12345"};
-            //dataGridView1.Rows.Add(row);
+            //dataGridView_search.Rows.Add(row);
             //
             dataGridView1.Rows.Clear();
 

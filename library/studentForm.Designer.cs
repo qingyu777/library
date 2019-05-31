@@ -2,7 +2,7 @@
 
 namespace library
 {
-    partial class studentForm
+    partial class StudentForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,15 +30,17 @@ namespace library
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(studentForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentForm));
             this.修改密码 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+
+            this.dataGridView_search = new System.Windows.Forms.DataGridView();
             this.book_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.book_author = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.book_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.book_location = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.book_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+
             this.bookTypeInput = new System.Windows.Forms.TextBox();
             this.bookAuthorInput = new System.Windows.Forms.TextBox();
             this.bookNameInput = new System.Windows.Forms.TextBox();
@@ -55,13 +57,20 @@ namespace library
             this.label9 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.studentUsername = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+
+            this.dataGridView_bookBorrowed = new System.Windows.Forms.DataGridView();
+            this.book_name_Borrowed = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.book_author_Borrowed = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.book_type_Borrowed = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.book_location_Borrowed = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.borrowedDatetime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+
             this.修改密码.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_search)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_bookBorrowed)).BeginInit();
             this.SuspendLayout();
             // 
             // 修改密码
@@ -78,7 +87,7 @@ namespace library
             // tabPage1
             // 
             this.tabPage1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabPage1.BackgroundImage")));
-            this.tabPage1.Controls.Add(this.dataGridView1);
+            this.tabPage1.Controls.Add(this.dataGridView_search);
             this.tabPage1.Controls.Add(this.bookTypeInput);
             this.tabPage1.Controls.Add(this.bookAuthorInput);
             this.tabPage1.Controls.Add(this.bookNameInput);
@@ -95,24 +104,24 @@ namespace library
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.TabPage1_Click);
             // 
-            // dataGridView1
+            // dataGridView_search
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridView_search.AllowUserToAddRows = false;
+            this.dataGridView_search.AllowUserToOrderColumns = true;
+            this.dataGridView_search.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_search.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.book_name,
             this.book_author,
             this.book_type,
             this.book_location,
             this.book_number});
-            this.dataGridView1.Location = new System.Drawing.Point(34, 70);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 27;
-            this.dataGridView1.Size = new System.Drawing.Size(745, 429);
-            this.dataGridView1.TabIndex = 18;
+            this.dataGridView_search.Location = new System.Drawing.Point(34, 70);
+            this.dataGridView_search.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView_search.Name = "dataGridView1";
+            this.dataGridView_search.ReadOnly = true;
+            this.dataGridView_search.RowTemplate.Height = 27;
+            this.dataGridView_search.Size = new System.Drawing.Size(745, 429);
+            this.dataGridView_search.TabIndex = 18;
             // 
             // book_name
             // 
@@ -140,7 +149,7 @@ namespace library
             // 
             // book_number
             // 
-            this.book_number.HeaderText = "书籍数量";
+            this.book_number.HeaderText = "剩余可借数量";
             this.book_number.Name = "book_number";
             this.book_number.ReadOnly = true;
             // 
@@ -207,7 +216,7 @@ namespace library
             // tabPage2
             // 
             this.tabPage2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabPage2.BackgroundImage")));
-            this.tabPage2.Controls.Add(this.dataGridView2);
+            this.tabPage2.Controls.Add(this.dataGridView_bookBorrowed);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -290,26 +299,60 @@ namespace library
             this.studentUsername.Size = new System.Drawing.Size(63, 15);
             this.studentUsername.TabIndex = 8;
             this.studentUsername.Text = "label12";
+
+
             // 
-            // dataGridView2
+            // book_name_Borrowed
             // 
+            this.book_name_Borrowed.HeaderText = "书名";
+            //this.book_name_Borrowed.Name = "book_name_Borrowed";
+            this.book_name_Borrowed.ReadOnly = true;
+            // 
+            // book_author_Borrowed
+            // 
+            this.book_author_Borrowed.HeaderText = "书籍作者";
+            //this.book_author_Borrowed.Name = "book_author_Borrowed";
+            this.book_author_Borrowed.ReadOnly = true;
+            // 
+            // book_type_Borrowed
+            // 
+            this.book_type_Borrowed.HeaderText = "书籍类型";
+            //this.book_type_Borrowed.Name = "book_type_Borrowed";
+            this.book_type_Borrowed.ReadOnly = true;
+            // 
+            // book_location_Borrowed
+            // 
+            this.book_location_Borrowed.HeaderText = "书籍位置";
+            //this.book_location_Borrowed.Name = "book_location_Borrowed";
+            this.book_location_Borrowed.ReadOnly = true;
+            // 
+            // borrowedDatetime
+            // 
+            this.borrowedDatetime.HeaderText = "借阅时间";
+            //this.borrowedDatetime.Name = "borrowedDatetime";
+            this.borrowedDatetime.ReadOnly = true;
+            // 
+            // 
+            // dataGridView_bookBorrowed
+            // 
+
             DataGridViewColumn[] dataGridViewColumn = new System.Windows.Forms.DataGridViewColumn[] {
-            this.book_name,
-            this.book_author,
-            this.book_type,
-            this.book_location,
-            this.book_number};
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToOrderColumns = true;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(dataGridViewColumn);
-            this.dataGridView2.Location = new System.Drawing.Point(34, 70);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.RowTemplate.Height = 27;
-            this.dataGridView2.Size = new System.Drawing.Size(745, 429);
-            this.dataGridView2.TabIndex = 18;
+            this.book_name_Borrowed,
+            this.book_author_Borrowed,
+            this.book_type_Borrowed,
+            this.book_location_Borrowed,
+            this.borrowedDatetime};
+            this.dataGridView_bookBorrowed.AllowUserToAddRows = false;
+            this.dataGridView_bookBorrowed.AllowUserToOrderColumns = true;
+            this.dataGridView_bookBorrowed.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_bookBorrowed.Columns.AddRange(dataGridViewColumn);
+            this.dataGridView_bookBorrowed.Location = new System.Drawing.Point(34, 70);
+            this.dataGridView_bookBorrowed.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView_bookBorrowed.Name = "dataGridView2";
+            this.dataGridView_bookBorrowed.ReadOnly = true;
+            this.dataGridView_bookBorrowed.RowTemplate.Height = 27;
+            this.dataGridView_bookBorrowed.Size = new System.Drawing.Size(745, 429);
+            this.dataGridView_bookBorrowed.TabIndex = 18;
             // 
             // studentForm
             // 
@@ -325,11 +368,11 @@ namespace library
             this.修改密码.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_search)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_bookBorrowed)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -354,12 +397,17 @@ namespace library
         private System.Windows.Forms.TextBox bookTypeInput;
         private System.Windows.Forms.TextBox bookAuthorInput;
         private System.Windows.Forms.TextBox bookNameInput;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView_search;
         private DataGridViewTextBoxColumn book_name;
         private DataGridViewTextBoxColumn book_author;
         private DataGridViewTextBoxColumn book_type;
         private DataGridViewTextBoxColumn book_location;
         private DataGridViewTextBoxColumn book_number;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dataGridView_bookBorrowed;
+        private DataGridViewTextBoxColumn book_name_Borrowed;
+        private DataGridViewTextBoxColumn book_author_Borrowed;
+        private DataGridViewTextBoxColumn book_type_Borrowed;
+        private DataGridViewTextBoxColumn book_location_Borrowed;
+        private DataGridViewTextBoxColumn borrowedDatetime;
     }
 }

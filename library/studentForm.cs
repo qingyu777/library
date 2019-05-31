@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace library
 {
-    public partial class studentForm : Form
+    public partial class StudentForm : Form
     {
-        public studentForm()
+        public StudentForm()
         {
             InitializeComponent();
         }
@@ -45,7 +45,7 @@ namespace library
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            dataGridView1.Rows.Clear();
+            dataGridView_search.Rows.Clear();
 
             SqlConnect c = new SqlConnect();
             Encoding unicode = Encoding.Unicode;
@@ -58,7 +58,7 @@ namespace library
                 foreach (Book book in bookResult)
                 {
                     String[] bookinfo = { book.Book_name, book.Book_type, book.Book_author, book.Book_location, book.Book_number.ToString() };
-                    dataGridView1.Rows.Add(bookinfo);
+                    dataGridView_search.Rows.Add(bookinfo);
                 }
             }
             else

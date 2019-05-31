@@ -52,10 +52,10 @@ namespace library
             // 
             // searchBotton
             // 
-            this.searchBotton.Location = new System.Drawing.Point(757, 16);
-            this.searchBotton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.searchBotton.Location = new System.Drawing.Point(568, 13);
+            this.searchBotton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.searchBotton.Name = "searchBotton";
-            this.searchBotton.Size = new System.Drawing.Size(91, 36);
+            this.searchBotton.Size = new System.Drawing.Size(68, 29);
             this.searchBotton.TabIndex = 0;
             this.searchBotton.Text = "查询";
             this.searchBotton.UseVisualStyleBackColor = true;
@@ -63,10 +63,10 @@ namespace library
             // 
             // backBotton
             // 
-            this.backBotton.Location = new System.Drawing.Point(757, 58);
-            this.backBotton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.backBotton.Location = new System.Drawing.Point(568, 46);
+            this.backBotton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.backBotton.Name = "backBotton";
-            this.backBotton.Size = new System.Drawing.Size(91, 38);
+            this.backBotton.Size = new System.Drawing.Size(68, 30);
             this.backBotton.TabIndex = 1;
             this.backBotton.Text = "返回";
             this.backBotton.UseVisualStyleBackColor = true;
@@ -75,18 +75,20 @@ namespace library
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(67, 25);
+            this.label3.Location = new System.Drawing.Point(50, 20);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 15);
+            this.label3.Size = new System.Drawing.Size(53, 12);
             this.label3.TabIndex = 5;
             this.label3.Text = "书籍名：";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(52, 68);
+            this.label4.Location = new System.Drawing.Point(39, 54);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(82, 15);
+            this.label4.Size = new System.Drawing.Size(65, 12);
             this.label4.TabIndex = 6;
             this.label4.Text = "书籍作者：";
             this.label4.Click += new System.EventHandler(this.Label4_Click);
@@ -94,38 +96,39 @@ namespace library
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(399, 25);
+            this.label1.Location = new System.Drawing.Point(299, 20);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 15);
+            this.label1.Size = new System.Drawing.Size(65, 12);
             this.label1.TabIndex = 9;
             this.label1.Text = "书籍类型：";
             // 
             // bookNameInput
             // 
-            this.bookNameInput.Location = new System.Drawing.Point(149, 18);
-            this.bookNameInput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bookNameInput.Location = new System.Drawing.Point(112, 14);
+            this.bookNameInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.bookNameInput.Name = "bookNameInput";
-            this.bookNameInput.Size = new System.Drawing.Size(203, 25);
+            this.bookNameInput.Size = new System.Drawing.Size(153, 21);
             this.bookNameInput.TabIndex = 10;
             this.bookNameInput.TextChanged += new System.EventHandler(this.TextBox1222_TextChanged);
             // 
             // bookTypeInput
             // 
-            this.bookTypeInput.Location = new System.Drawing.Point(504, 18);
-            this.bookTypeInput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bookTypeInput.Location = new System.Drawing.Point(378, 14);
+            this.bookTypeInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.bookTypeInput.Name = "bookTypeInput";
-            this.bookTypeInput.Size = new System.Drawing.Size(203, 25);
+            this.bookTypeInput.Size = new System.Drawing.Size(153, 21);
             this.bookTypeInput.TabIndex = 11;
             // 
             // bookAuthorInput
             // 
-            this.bookAuthorInput.Location = new System.Drawing.Point(149, 55);
-            this.bookAuthorInput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bookAuthorInput.Location = new System.Drawing.Point(112, 44);
+            this.bookAuthorInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.bookAuthorInput.Name = "bookAuthorInput";
-            this.bookAuthorInput.Size = new System.Drawing.Size(203, 25);
+            this.bookAuthorInput.Size = new System.Drawing.Size(153, 21);
             this.bookAuthorInput.TabIndex = 12;
             // 
-            // dataGridView1
+            // dataGridView_search
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
@@ -136,12 +139,12 @@ namespace library
             this.book_type,
             this.book_location,
             this.book_number});
-            this.dataGridView1.Location = new System.Drawing.Point(55, 122);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView1.Location = new System.Drawing.Point(41, 98);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 27;
-            this.dataGridView1.Size = new System.Drawing.Size(745, 419);
+            this.dataGridView1.Size = new System.Drawing.Size(559, 335);
             this.dataGridView1.TabIndex = 18;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
             // 
@@ -183,10 +186,10 @@ namespace library
             // 
             // SearchBook
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1004, 552);
+            this.ClientSize = new System.Drawing.Size(753, 442);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.bookAuthorInput);
             this.Controls.Add(this.bookTypeInput);
@@ -196,7 +199,7 @@ namespace library
             this.Controls.Add(this.label3);
             this.Controls.Add(this.backBotton);
             this.Controls.Add(this.searchBotton);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "SearchBook";
             this.Text = "查找书籍";
             this.Load += new System.EventHandler(this.Form1_1_Load);

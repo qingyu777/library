@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace library
 {
-    public partial class administratorForm : Form
+    public partial class AdministratorForm : Form
     {
-        public administratorForm()
+        public AdministratorForm()
         {
             InitializeComponent();
         }
