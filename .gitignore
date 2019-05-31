@@ -1,6 +1,5 @@
 /library/obj
-/library/bin/Debug/library.exe
 /.vs
 /library/bin/Debug/*.pdb
-/library/App.config
+/library/bin/Debug/library.exe
 /library/bin/Debug/library.exe.config

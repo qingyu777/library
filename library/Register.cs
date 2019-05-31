@@ -26,7 +26,7 @@ namespace library
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            sqlconnect c = new sqlconnect();
+            SqlConnect c = new SqlConnect();
             if(userNameInput.Text.Length == 0 || passwardInput.Text.Length == 0)
             {
                 MessageBox.Show("请输入完整的注册信息！");

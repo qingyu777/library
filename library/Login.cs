@@ -23,7 +23,7 @@ namespace library
         {
             usernameInput.Text = usernameInput.Text.Replace("'", " ").Trim();   //防止sql注入
             passwardInput.Text = passwardInput.Text.Replace("'", " ").Trim();
-            sqlconnect c = new sqlconnect();
+            SqlConnect c = new SqlConnect();
 
             //"select * FROM admin where admin_username = '" + textBox1.Text + "'and admin_passward ='' or 'jjj'='jjj'"
 
@@ -55,7 +55,7 @@ namespace library
         {
             usernameInput.Text = usernameInput.Text.Replace("'", " ").Trim();   //防止sql注入
             passwardInput.Text = passwardInput.Text.Replace("'", " ").Trim();
-            sqlconnect c = new sqlconnect();
+            SqlConnect c = new SqlConnect();
 
             //"select * FROM admin where admin_username = '" + textBox1.Text + "'and admin_passward ='' or 'jjj'='jjj'"
 

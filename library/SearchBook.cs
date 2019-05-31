@@ -42,7 +42,7 @@ namespace library
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            //sqlconnect c = new sqlconnect();
+            //SqlConnect c = new SqlConnect();
             //richTextBox1.Text = c.GetSerchResult(c.ExcuteOrder("select book_name FROM book where book_type = '" + textBox6.Text + "'", c.myCon));
             //c.CloseMySqlConnection();
 
@@ -54,7 +54,7 @@ namespace library
 
             dataGridView1.Rows.Clear();
 
-            sqlconnect c = new sqlconnect();
+            SqlConnect c = new SqlConnect();
             Encoding unicode = Encoding.Unicode;
             String sql = "SELECT * from book where book_name like '%" + bookNameInput.Text + "%' and book_type like '%" + bookTypeInput.Text + "%' and book_author like '%" + bookAuthorInput.Text + "%'";
             Console.WriteLine(sql);
