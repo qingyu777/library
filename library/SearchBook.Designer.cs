@@ -40,15 +40,15 @@ namespace library
             this.bookNameInput = new System.Windows.Forms.TextBox();
             this.bookTypeInput = new System.Windows.Forms.TextBox();
             this.bookAuthorInput = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.contextMenuStripForBooks = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.dataGridViewForGuast = new System.Windows.Forms.DataGridView();
             this.guest_search_book_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guest_search_book_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guest_search_book_author = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guest_search_book_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guest_search_book_location = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guest_search_book_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.contextMenuStripForBooks = new System.Windows.Forms.ContextMenuStrip(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewForGuast)).BeginInit();
             this.SuspendLayout();
             // 
             // searchBotton
@@ -126,32 +126,26 @@ namespace library
             this.bookAuthorInput.Size = new System.Drawing.Size(203, 25);
             this.bookAuthorInput.TabIndex = 12;
             // 
-            // dataGridView1
+            // dataGridViewForGuast
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewForGuast.AllowUserToAddRows = false;
+            this.dataGridViewForGuast.AllowUserToOrderColumns = true;
+            this.dataGridViewForGuast.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewForGuast.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.guest_search_book_id,
             this.guest_search_book_name,
             this.guest_search_book_author,
             this.guest_search_book_type,
             this.guest_search_book_location,
             this.guest_search_book_number});
-            this.dataGridView1.Location = new System.Drawing.Point(23, 110);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 27;
-            this.dataGridView1.Size = new System.Drawing.Size(950, 419);
-            this.dataGridView1.TabIndex = 18;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
-            // 
-            // contextMenuStripForBooks
-            // 
-            this.contextMenuStripForBooks.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStripForBooks.Name = "contextMenuStripForBooks";
-            this.contextMenuStripForBooks.Size = new System.Drawing.Size(61, 4);
+            this.dataGridViewForGuast.Location = new System.Drawing.Point(23, 110);
+            this.dataGridViewForGuast.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridViewForGuast.Name = "dataGridViewForGuast";
+            this.dataGridViewForGuast.ReadOnly = true;
+            this.dataGridViewForGuast.RowTemplate.Height = 27;
+            this.dataGridViewForGuast.Size = new System.Drawing.Size(950, 419);
+            this.dataGridViewForGuast.TabIndex = 18;
+            this.dataGridViewForGuast.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
             // 
             // guest_search_book_id
             // 
@@ -191,13 +185,19 @@ namespace library
             this.guest_search_book_number.ReadOnly = true;
             this.guest_search_book_number.Width = 130;
             // 
+            // contextMenuStripForBooks
+            // 
+            this.contextMenuStripForBooks.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStripForBooks.Name = "contextMenuStripForBooks";
+            this.contextMenuStripForBooks.Size = new System.Drawing.Size(61, 4);
+            // 
             // SearchBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1004, 552);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewForGuast);
             this.Controls.Add(this.bookAuthorInput);
             this.Controls.Add(this.bookTypeInput);
             this.Controls.Add(this.bookNameInput);
@@ -210,7 +210,7 @@ namespace library
             this.Name = "SearchBook";
             this.Text = "查找书籍";
             this.Load += new System.EventHandler(this.Form1_1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewForGuast)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -226,7 +226,7 @@ namespace library
         private System.Windows.Forms.TextBox bookNameInput;
         private System.Windows.Forms.TextBox bookTypeInput;
         private System.Windows.Forms.TextBox bookAuthorInput;
-        private DataGridView dataGridView1;
+        private DataGridView dataGridViewForGuast;
         private ContextMenuStrip contextMenuStripForBooks;
         private DataGridViewTextBoxColumn guest_search_book_id;
         private DataGridViewTextBoxColumn guest_search_book_name;

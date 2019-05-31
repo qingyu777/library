@@ -43,7 +43,7 @@ namespace library
 
         private void Button1_Click_1(object sender, EventArgs e)
         {
-            dataGridView1.Rows.Clear();
+            dataGridViewForAdmin.Rows.Clear();
 
             SqlConnect c = new SqlConnect();
             String sql;
@@ -63,7 +63,7 @@ namespace library
                 {
                     book_borrow_number = c.GetSerchResult(c.ExcuteOrder("SELECT COUNT(*) FROM borrowRecord where book_id = "+ book.Book_id, c.myCon));
                     String[] bookinfo = { book.Book_id.ToString(), book.Book_name, book.Book_type, book.Book_author, book.Book_location, book.Book_number.ToString(), book.Book_left_number.ToString() };
-                    dataGridView1.Rows.Add(bookinfo);
+                    dataGridViewForAdmin.Rows.Add(bookinfo);
                 }
             }
             else
@@ -73,6 +73,19 @@ namespace library
 
 
             c.CloseMySqlConnection();
+        }
+        //在右键点击时，将当前行选中
+        private void DataGridViewUserSearchBookResult_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == System.Windows.Forms.MouseButtons.Right && e.RowIndex >= 0)
+            {
+                if (!dataGridViewForAdmin.Rows[e.RowIndex].Selected)
+                {
+                    dataGridViewForAdmin.ClearSelection();
+                    dataGridViewForAdmin.Rows[e.RowIndex].Selected = true;
+                }
+                menuForAdmin.Show(MousePosition.X, MousePosition.Y);
+            }
         }
 
         private void Label6_Click(object sender, EventArgs e)

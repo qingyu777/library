@@ -30,11 +30,12 @@ namespace library
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdministratorForm));
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewForAdmin = new System.Windows.Forms.DataGridView();
             this.book_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.book_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.book_author = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -81,10 +82,13 @@ namespace library
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.adminUsername = new System.Windows.Forms.Label();
+            this.menuForAdmin = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.删除书籍信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewForAdmin)).BeginInit();
             this.tabPage2.SuspendLayout();
+            this.menuForAdmin.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -110,7 +114,7 @@ namespace library
             // 
             this.tabPage1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabPage1.BackgroundImage")));
             this.tabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.tabPage1.Controls.Add(this.dataGridView1);
+            this.tabPage1.Controls.Add(this.dataGridViewForAdmin);
             this.tabPage1.Controls.Add(this.bookLocationInput);
             this.tabPage1.Controls.Add(this.bookTypeInput);
             this.tabPage1.Controls.Add(this.bookAuthorInput);
@@ -131,12 +135,12 @@ namespace library
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.TabPage1_Click);
             // 
-            // dataGridView1
+            // dataGridViewForAdmin
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewForAdmin.AllowUserToAddRows = false;
+            this.dataGridViewForAdmin.AllowUserToOrderColumns = true;
+            this.dataGridViewForAdmin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewForAdmin.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.book_id,
             this.book_name,
             this.book_author,
@@ -144,13 +148,15 @@ namespace library
             this.book_location,
             this.book_number,
             this.book_left_number});
-            this.dataGridView1.Location = new System.Drawing.Point(3, 133);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 27;
-            this.dataGridView1.Size = new System.Drawing.Size(880, 455);
-            this.dataGridView1.TabIndex = 18;
+            this.dataGridViewForAdmin.ContextMenuStrip = this.menuForAdmin;
+            this.dataGridViewForAdmin.Location = new System.Drawing.Point(3, 133);
+            this.dataGridViewForAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridViewForAdmin.Name = "dataGridViewForAdmin";
+            this.dataGridViewForAdmin.ReadOnly = true;
+            this.dataGridViewForAdmin.RowTemplate.Height = 27;
+            this.dataGridViewForAdmin.Size = new System.Drawing.Size(880, 455);
+            this.dataGridViewForAdmin.TabIndex = 18;
+            this.dataGridViewForAdmin.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DataGridViewUserSearchBookResult_CellMouseDown);
             // 
             // book_id
             // 
@@ -192,7 +198,7 @@ namespace library
             this.book_number.HeaderText = "书籍总数";
             this.book_number.Name = "book_number";
             this.book_number.ReadOnly = true;
-            this.book_number.Width = 89;
+            this.book_number.Width = 75;
             // 
             // book_left_number
             // 
@@ -549,6 +555,20 @@ namespace library
             this.adminUsername.TabIndex = 7;
             this.adminUsername.Text = "label14";
             // 
+            // menuForAdmin
+            // 
+            this.menuForAdmin.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuForAdmin.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.删除书籍信息ToolStripMenuItem});
+            this.menuForAdmin.Name = "menuForAdmin";
+            this.menuForAdmin.Size = new System.Drawing.Size(169, 28);
+            // 
+            // 删除书籍信息ToolStripMenuItem
+            // 
+            this.删除书籍信息ToolStripMenuItem.Name = "删除书籍信息ToolStripMenuItem";
+            this.删除书籍信息ToolStripMenuItem.Size = new System.Drawing.Size(168, 24);
+            this.删除书籍信息ToolStripMenuItem.Text = "删除书籍信息";
+            // 
             // AdministratorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -563,9 +583,10 @@ namespace library
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewForAdmin)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.menuForAdmin.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -614,7 +635,7 @@ namespace library
         private System.Windows.Forms.TextBox bookAuthorInput;
         private System.Windows.Forms.TextBox bookNameInput;
         private System.Windows.Forms.TextBox bookIdInput;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewForAdmin;
         private DataGridViewTextBoxColumn admin_search_book_id;
         private DataGridViewTextBoxColumn admin_search_book_name;
         private DataGridViewTextBoxColumn admin_search_book_author;
@@ -629,5 +650,7 @@ namespace library
         private DataGridViewTextBoxColumn book_location;
         private DataGridViewTextBoxColumn book_left_number;
         private DataGridViewTextBoxColumn book_number;
+        private ContextMenuStrip menuForAdmin;
+        private ToolStripMenuItem 删除书籍信息ToolStripMenuItem;
     }
 }

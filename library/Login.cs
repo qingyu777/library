@@ -59,13 +59,20 @@ namespace library
             SqlConnect c = new SqlConnect();
 
             //"select * FROM admin where admin_username = '" + textBox1.Text + "'and admin_passward ='' or 'jjj'='jjj'"
-
-            if (c.IsSerchResult(c.ExcuteOrder("select * FROM student where student_username = '" + usernameInput.Text + "'and student_passward ='" + passwardInput.Text + "'", c.myCon)) > 0)
+            String sql = "select * FROM student where student_username = '" + usernameInput.Text + "'and student_passward ='" + passwardInput.Text + "'";
+            Console.WriteLine(sql);
+            int user_id = c.FindUserByUsernameAndPassward(c.ExcuteOrder(sql, c.myCon));
+            Console.WriteLine("用户编号", user_id);
+            if (user_id > 0)
             {
-                anotherForm5 = new StudentForm(usernameInput.Text);
+                anotherForm5 = new StudentForm(user_id, usernameInput.Text);
                 this.Hide();
                 anotherForm5.ShowDialog();
                 Application.ExitThread();
+            }
+            else if (user_id < 0)
+            {
+                MessageBox.Show("sql查询出错");
             }
             else if (c.IsSerchResult(c.ExcuteOrder("select * FROM student where student_username = '" + usernameInput.Text + "'", c.myCon)) > 0)
             {

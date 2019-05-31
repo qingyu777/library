@@ -52,7 +52,7 @@ namespace library
             //string[] row = { "12", "123", "1234","12345"};
             //dataGridView_search.Rows.Add(row);
             //
-            dataGridView1.Rows.Clear();
+            dataGridViewForGuast.Rows.Clear();
 
             SqlConnect c = new SqlConnect();
             String sql = "SELECT *,book_number-(select count(*) from borrowRecord where borrowRecord.book_id = book.book_id and status_borrow = 'jcwh') as leftNumber from book where book_name like '%" + bookNameInput.Text + "%' and book_type like '%" + bookTypeInput.Text + "%' and book_author like '%" + bookAuthorInput.Text + "%'";
@@ -64,7 +64,7 @@ namespace library
                 foreach (Book book in bookResult)
                 {
                     String[] bookinfo = { book.Book_id.ToString(), book.Book_name, book.Book_author, book.Book_type, book.Book_location, book.Book_left_number.ToString() };
-                    dataGridView1.Rows.Add(bookinfo);
+                    dataGridViewForGuast.Rows.Add(bookinfo);
                 }
             }
             else
@@ -101,10 +101,10 @@ namespace library
         {
             if (e.Button == System.Windows.Forms.MouseButtons.Right && e.RowIndex >= 0)
             {
-                if (!dataGridView1.Rows[e.RowIndex].Selected)
+                if (!dataGridViewForGuast.Rows[e.RowIndex].Selected)
                 {
-                    dataGridView1.ClearSelection();
-                    dataGridView1.Rows[e.RowIndex].Selected = true;
+                    dataGridViewForGuast.ClearSelection();
+                    dataGridViewForGuast.Rows[e.RowIndex].Selected = true;
                 }
                 contextMenuStripForBooks.Show(MousePosition.X, MousePosition.Y);
             }
