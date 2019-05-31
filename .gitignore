@@ -3,3 +3,4 @@
 /library/bin/Debug/*.pdb
 /library/bin/Debug/library.exe
 /library/bin/Debug/library.exe.config
+/library/App.config
