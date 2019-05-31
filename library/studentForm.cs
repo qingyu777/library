@@ -45,7 +45,7 @@ namespace library
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            dataGridView_search.Rows.Clear();
+            dataGridViewUserSearchBookResult.Rows.Clear();
 
             SqlConnect c = new SqlConnect();
             Encoding unicode = Encoding.Unicode;
@@ -58,7 +58,7 @@ namespace library
                 foreach (Book book in bookResult)
                 {
                     String[] bookinfo = { book.Book_name, book.Book_type, book.Book_author, book.Book_location, book.Book_number.ToString() };
-                    dataGridView_search.Rows.Add(bookinfo);
+                    dataGridViewUserSearchBookResult.Rows.Add(bookinfo);
                 }
             }
             else
@@ -73,6 +73,25 @@ namespace library
         private void BookAutherInput_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void MenuForUserSearchedBooks_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        //在右键点击时，将当前行选中
+        private void dataGridViewUserSearchBookResult_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == System.Windows.Forms.MouseButtons.Right && e.RowIndex >= 0)
+            {
+                if (!dataGridViewUserSearchBookResult.Rows[e.RowIndex].Selected)
+                {
+                    dataGridViewUserSearchBookResult.ClearSelection();
+                    dataGridViewUserSearchBookResult.Rows[e.RowIndex].Selected = true;
+                }
+                menuForUserSearchedBooks.Show(MousePosition.X, MousePosition.Y);
+            }
         }
     }
 }

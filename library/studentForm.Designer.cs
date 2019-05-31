@@ -30,17 +30,19 @@ namespace library
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentForm));
             this.修改密码 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-
-            this.dataGridView_search = new System.Windows.Forms.DataGridView();
+            this.dataGridViewUserSearchBookResult = new System.Windows.Forms.DataGridView();
             this.book_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.book_author = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.book_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.book_location = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.book_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-
+            this.menuForUserSearchedBooks = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.借阅书籍ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.bookTypeInput = new System.Windows.Forms.TextBox();
             this.bookAuthorInput = new System.Windows.Forms.TextBox();
             this.bookNameInput = new System.Windows.Forms.TextBox();
@@ -49,6 +51,13 @@ namespace library
             this.searchBookButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.刷新 = new System.Windows.Forms.Button();
+            this.dataGridView_bookBorrowed = new System.Windows.Forms.DataGridView();
+            this.book_name_Borrowed = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.book_author_Borrowed = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.book_type_Borrowed = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.book_location_Borrowed = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.borrowedDatetime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox8 = new System.Windows.Forms.TextBox();
@@ -57,20 +66,13 @@ namespace library
             this.label9 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.studentUsername = new System.Windows.Forms.Label();
-
-            this.dataGridView_bookBorrowed = new System.Windows.Forms.DataGridView();
-            this.book_name_Borrowed = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.book_author_Borrowed = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.book_type_Borrowed = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.book_location_Borrowed = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.borrowedDatetime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-
             this.修改密码.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_search)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUserSearchBookResult)).BeginInit();
+            this.menuForUserSearchedBooks.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_bookBorrowed)).BeginInit();
+            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // 修改密码
@@ -87,7 +89,7 @@ namespace library
             // tabPage1
             // 
             this.tabPage1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabPage1.BackgroundImage")));
-            this.tabPage1.Controls.Add(this.dataGridView_search);
+            this.tabPage1.Controls.Add(this.dataGridViewUserSearchBookResult);
             this.tabPage1.Controls.Add(this.bookTypeInput);
             this.tabPage1.Controls.Add(this.bookAuthorInput);
             this.tabPage1.Controls.Add(this.bookNameInput);
@@ -104,30 +106,34 @@ namespace library
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.TabPage1_Click);
             // 
-            // dataGridView_search
+            // dataGridViewUserSearchBookResult
             // 
-            this.dataGridView_search.AllowUserToAddRows = false;
-            this.dataGridView_search.AllowUserToOrderColumns = true;
-            this.dataGridView_search.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_search.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewUserSearchBookResult.AllowUserToAddRows = false;
+            this.dataGridViewUserSearchBookResult.AllowUserToOrderColumns = true;
+            this.dataGridViewUserSearchBookResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewUserSearchBookResult.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.book_name,
             this.book_author,
             this.book_type,
             this.book_location,
             this.book_number});
-            this.dataGridView_search.Location = new System.Drawing.Point(34, 70);
-            this.dataGridView_search.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView_search.Name = "dataGridView1";
-            this.dataGridView_search.ReadOnly = true;
-            this.dataGridView_search.RowTemplate.Height = 27;
-            this.dataGridView_search.Size = new System.Drawing.Size(745, 429);
-            this.dataGridView_search.TabIndex = 18;
+            this.dataGridViewUserSearchBookResult.ContextMenuStrip = this.menuForUserSearchedBooks;
+            this.dataGridViewUserSearchBookResult.Location = new System.Drawing.Point(34, 70);
+            this.dataGridViewUserSearchBookResult.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridViewUserSearchBookResult.Name = "dataGridViewUserSearchBookResult";
+            this.dataGridViewUserSearchBookResult.ReadOnly = true;
+            this.dataGridViewUserSearchBookResult.RowTemplate.Height = 27;
+            this.dataGridViewUserSearchBookResult.Size = new System.Drawing.Size(670, 431);
+            this.dataGridViewUserSearchBookResult.TabIndex = 18;
+            this.dataGridViewUserSearchBookResult.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewUserSearchBookResult_CellMouseDown);
             // 
             // book_name
             // 
+            this.book_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.book_name.HeaderText = "书名";
             this.book_name.Name = "book_name";
             this.book_name.ReadOnly = true;
+            this.book_name.Width = 62;
             // 
             // book_author
             // 
@@ -149,9 +155,33 @@ namespace library
             // 
             // book_number
             // 
+            this.book_number.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.book_number.HeaderText = "剩余可借数量";
             this.book_number.Name = "book_number";
             this.book_number.ReadOnly = true;
+            this.book_number.Width = 89;
+            // 
+            // menuForUserSearchedBooks
+            // 
+            this.menuForUserSearchedBooks.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuForUserSearchedBooks.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.借阅书籍ToolStripMenuItem,
+            this.toolStripMenuItem2});
+            this.menuForUserSearchedBooks.Name = "menuForUserSearchedBooks";
+            this.menuForUserSearchedBooks.Size = new System.Drawing.Size(139, 52);
+            this.menuForUserSearchedBooks.Opening += new System.ComponentModel.CancelEventHandler(this.MenuForUserSearchedBooks_Opening);
+            // 
+            // 借阅书籍ToolStripMenuItem
+            // 
+            this.借阅书籍ToolStripMenuItem.Name = "借阅书籍ToolStripMenuItem";
+            this.借阅书籍ToolStripMenuItem.Size = new System.Drawing.Size(138, 24);
+            this.借阅书籍ToolStripMenuItem.Text = "借阅书籍";
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(138, 24);
+            this.toolStripMenuItem2.Text = "123";
             // 
             // bookTypeInput
             // 
@@ -216,6 +246,7 @@ namespace library
             // tabPage2
             // 
             this.tabPage2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabPage2.BackgroundImage")));
+            this.tabPage2.Controls.Add(this.刷新);
             this.tabPage2.Controls.Add(this.dataGridView_bookBorrowed);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
@@ -224,6 +255,64 @@ namespace library
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "已借阅书籍";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // 刷新
+            // 
+            this.刷新.Location = new System.Drawing.Point(34, 17);
+            this.刷新.Name = "刷新";
+            this.刷新.Size = new System.Drawing.Size(75, 30);
+            this.刷新.TabIndex = 19;
+            this.刷新.Text = "刷新";
+            this.刷新.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView_bookBorrowed
+            // 
+            this.dataGridView_bookBorrowed.AllowUserToAddRows = false;
+            this.dataGridView_bookBorrowed.AllowUserToOrderColumns = true;
+            this.dataGridView_bookBorrowed.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_bookBorrowed.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.book_name_Borrowed,
+            this.book_author_Borrowed,
+            this.book_type_Borrowed,
+            this.book_location_Borrowed,
+            this.borrowedDatetime});
+            this.dataGridView_bookBorrowed.Location = new System.Drawing.Point(34, 70);
+            this.dataGridView_bookBorrowed.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView_bookBorrowed.Name = "dataGridView_bookBorrowed";
+            this.dataGridView_bookBorrowed.ReadOnly = true;
+            this.dataGridView_bookBorrowed.RowTemplate.Height = 27;
+            this.dataGridView_bookBorrowed.Size = new System.Drawing.Size(745, 429);
+            this.dataGridView_bookBorrowed.TabIndex = 18;
+            // 
+            // book_name_Borrowed
+            // 
+            this.book_name_Borrowed.HeaderText = "书名";
+            this.book_name_Borrowed.Name = "book_name_Borrowed";
+            this.book_name_Borrowed.ReadOnly = true;
+            // 
+            // book_author_Borrowed
+            // 
+            this.book_author_Borrowed.HeaderText = "书籍作者";
+            this.book_author_Borrowed.Name = "book_author_Borrowed";
+            this.book_author_Borrowed.ReadOnly = true;
+            // 
+            // book_type_Borrowed
+            // 
+            this.book_type_Borrowed.HeaderText = "书籍类型";
+            this.book_type_Borrowed.Name = "book_type_Borrowed";
+            this.book_type_Borrowed.ReadOnly = true;
+            // 
+            // book_location_Borrowed
+            // 
+            this.book_location_Borrowed.HeaderText = "书籍位置";
+            this.book_location_Borrowed.Name = "book_location_Borrowed";
+            this.book_location_Borrowed.ReadOnly = true;
+            // 
+            // borrowedDatetime
+            // 
+            this.borrowedDatetime.HeaderText = "借阅时间";
+            this.borrowedDatetime.Name = "borrowedDatetime";
+            this.borrowedDatetime.ReadOnly = true;
             // 
             // tabPage3
             // 
@@ -299,62 +388,8 @@ namespace library
             this.studentUsername.Size = new System.Drawing.Size(63, 15);
             this.studentUsername.TabIndex = 8;
             this.studentUsername.Text = "label12";
-
-
             // 
-            // book_name_Borrowed
-            // 
-            this.book_name_Borrowed.HeaderText = "书名";
-            //this.book_name_Borrowed.Name = "book_name_Borrowed";
-            this.book_name_Borrowed.ReadOnly = true;
-            // 
-            // book_author_Borrowed
-            // 
-            this.book_author_Borrowed.HeaderText = "书籍作者";
-            //this.book_author_Borrowed.Name = "book_author_Borrowed";
-            this.book_author_Borrowed.ReadOnly = true;
-            // 
-            // book_type_Borrowed
-            // 
-            this.book_type_Borrowed.HeaderText = "书籍类型";
-            //this.book_type_Borrowed.Name = "book_type_Borrowed";
-            this.book_type_Borrowed.ReadOnly = true;
-            // 
-            // book_location_Borrowed
-            // 
-            this.book_location_Borrowed.HeaderText = "书籍位置";
-            //this.book_location_Borrowed.Name = "book_location_Borrowed";
-            this.book_location_Borrowed.ReadOnly = true;
-            // 
-            // borrowedDatetime
-            // 
-            this.borrowedDatetime.HeaderText = "借阅时间";
-            //this.borrowedDatetime.Name = "borrowedDatetime";
-            this.borrowedDatetime.ReadOnly = true;
-            // 
-            // 
-            // dataGridView_bookBorrowed
-            // 
-
-            DataGridViewColumn[] dataGridViewColumn = new System.Windows.Forms.DataGridViewColumn[] {
-            this.book_name_Borrowed,
-            this.book_author_Borrowed,
-            this.book_type_Borrowed,
-            this.book_location_Borrowed,
-            this.borrowedDatetime};
-            this.dataGridView_bookBorrowed.AllowUserToAddRows = false;
-            this.dataGridView_bookBorrowed.AllowUserToOrderColumns = true;
-            this.dataGridView_bookBorrowed.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_bookBorrowed.Columns.AddRange(dataGridViewColumn);
-            this.dataGridView_bookBorrowed.Location = new System.Drawing.Point(34, 70);
-            this.dataGridView_bookBorrowed.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView_bookBorrowed.Name = "dataGridView2";
-            this.dataGridView_bookBorrowed.ReadOnly = true;
-            this.dataGridView_bookBorrowed.RowTemplate.Height = 27;
-            this.dataGridView_bookBorrowed.Size = new System.Drawing.Size(745, 429);
-            this.dataGridView_bookBorrowed.TabIndex = 18;
-            // 
-            // studentForm
+            // StudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -363,16 +398,17 @@ namespace library
             this.Controls.Add(this.studentUsername);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.修改密码);
-            this.Name = "studentForm";
+            this.Name = "StudentForm";
             this.Text = "用户界面";
             this.修改密码.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_search)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUserSearchBookResult)).EndInit();
+            this.menuForUserSearchedBooks.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_bookBorrowed)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_bookBorrowed)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -397,17 +433,21 @@ namespace library
         private System.Windows.Forms.TextBox bookTypeInput;
         private System.Windows.Forms.TextBox bookAuthorInput;
         private System.Windows.Forms.TextBox bookNameInput;
-        private System.Windows.Forms.DataGridView dataGridView_search;
-        private DataGridViewTextBoxColumn book_name;
-        private DataGridViewTextBoxColumn book_author;
-        private DataGridViewTextBoxColumn book_type;
-        private DataGridViewTextBoxColumn book_location;
-        private DataGridViewTextBoxColumn book_number;
+        private System.Windows.Forms.DataGridView dataGridViewUserSearchBookResult;
         private System.Windows.Forms.DataGridView dataGridView_bookBorrowed;
         private DataGridViewTextBoxColumn book_name_Borrowed;
         private DataGridViewTextBoxColumn book_author_Borrowed;
         private DataGridViewTextBoxColumn book_type_Borrowed;
         private DataGridViewTextBoxColumn book_location_Borrowed;
         private DataGridViewTextBoxColumn borrowedDatetime;
+        private Button 刷新;
+        private DataGridViewTextBoxColumn book_name;
+        private DataGridViewTextBoxColumn book_author;
+        private DataGridViewTextBoxColumn book_type;
+        private DataGridViewTextBoxColumn book_location;
+        private DataGridViewTextBoxColumn book_number;
+        private ContextMenuStrip menuForUserSearchedBooks;
+        private ToolStripMenuItem 借阅书籍ToolStripMenuItem;
+        private ToolStripMenuItem toolStripMenuItem2;
     }
 }
