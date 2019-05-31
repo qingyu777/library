@@ -13,6 +13,7 @@ namespace library
 {
     public partial class Form3 : Form
     {
+        Main anotherForm1;
         private Login anotherForm;
         public Form3()
         {
@@ -57,6 +58,14 @@ namespace library
         private void TextBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            anotherForm1 = new Main();
+            this.Hide();
+            anotherForm1.ShowDialog();
+            Application.ExitThread();
         }
     }
 }

@@ -139,6 +139,7 @@ namespace library
             this.dataGridView1.Location = new System.Drawing.Point(55, 122);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 27;
             this.dataGridView1.Size = new System.Drawing.Size(745, 419);
             this.dataGridView1.TabIndex = 18;
@@ -148,26 +149,31 @@ namespace library
             // 
             this.book_name.HeaderText = "书名";
             this.book_name.Name = "book_name";
+            this.book_name.ReadOnly = true;
             // 
             // book_author
             // 
             this.book_author.HeaderText = "书籍作者";
             this.book_author.Name = "book_author";
+            this.book_author.ReadOnly = true;
             // 
             // book_type
             // 
             this.book_type.HeaderText = "书籍类型";
             this.book_type.Name = "book_type";
+            this.book_type.ReadOnly = true;
             // 
             // book_location
             // 
             this.book_location.HeaderText = "书籍位置";
             this.book_location.Name = "book_location";
+            this.book_location.ReadOnly = true;
             // 
             // book_number
             // 
             this.book_number.HeaderText = "书籍数量";
             this.book_number.Name = "book_number";
+            this.book_number.ReadOnly = true;
             // 
             // contextMenuStripForBooks
             // 
@@ -216,7 +222,6 @@ namespace library
         private DataGridViewTextBoxColumn book_author;
         private DataGridViewTextBoxColumn book_type;
         private DataGridViewTextBoxColumn book_location;
-        private DataGridViewTextBoxColumn book_status;
         private DataGridViewTextBoxColumn book_number;
     }
 }

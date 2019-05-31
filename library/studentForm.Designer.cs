@@ -1,4 +1,6 @@
-﻿namespace library
+﻿using System.Windows.Forms;
+
+namespace library
 {
     partial class studentForm
     {
@@ -32,16 +34,19 @@
             this.修改密码 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.book_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.book_author = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.book_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.book_location = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.book_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bookTypeInput = new System.Windows.Forms.TextBox();
-            this.bookAutherInput = new System.Windows.Forms.TextBox();
+            this.bookAuthorInput = new System.Windows.Forms.TextBox();
             this.bookNameInput = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.searchBookButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox8 = new System.Windows.Forms.TextBox();
@@ -50,11 +55,13 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.studentUsername = new System.Windows.Forms.Label();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.修改密码.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // 修改密码
@@ -73,7 +80,7 @@
             this.tabPage1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabPage1.BackgroundImage")));
             this.tabPage1.Controls.Add(this.dataGridView1);
             this.tabPage1.Controls.Add(this.bookTypeInput);
-            this.tabPage1.Controls.Add(this.bookAutherInput);
+            this.tabPage1.Controls.Add(this.bookAuthorInput);
             this.tabPage1.Controls.Add(this.bookNameInput);
             this.tabPage1.Controls.Add(this.label11);
             this.tabPage1.Controls.Add(this.label7);
@@ -93,11 +100,49 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(29, 71);
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.book_name,
+            this.book_author,
+            this.book_type,
+            this.book_location,
+            this.book_number});
+            this.dataGridView1.Location = new System.Drawing.Point(34, 70);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 27;
-            this.dataGridView1.Size = new System.Drawing.Size(701, 439);
-            this.dataGridView1.TabIndex = 21;
+            this.dataGridView1.Size = new System.Drawing.Size(745, 429);
+            this.dataGridView1.TabIndex = 18;
+            // 
+            // book_name
+            // 
+            this.book_name.HeaderText = "书名";
+            this.book_name.Name = "book_name";
+            this.book_name.ReadOnly = true;
+            // 
+            // book_author
+            // 
+            this.book_author.HeaderText = "书籍作者";
+            this.book_author.Name = "book_author";
+            this.book_author.ReadOnly = true;
+            // 
+            // book_type
+            // 
+            this.book_type.HeaderText = "书籍类型";
+            this.book_type.Name = "book_type";
+            this.book_type.ReadOnly = true;
+            // 
+            // book_location
+            // 
+            this.book_location.HeaderText = "书籍位置";
+            this.book_location.Name = "book_location";
+            this.book_location.ReadOnly = true;
+            // 
+            // book_number
+            // 
+            this.book_number.HeaderText = "书籍数量";
+            this.book_number.Name = "book_number";
+            this.book_number.ReadOnly = true;
             // 
             // bookTypeInput
             // 
@@ -106,12 +151,13 @@
             this.bookTypeInput.Size = new System.Drawing.Size(136, 25);
             this.bookTypeInput.TabIndex = 20;
             // 
-            // bookAutherInput
+            // bookAuthorInput
             // 
-            this.bookAutherInput.Location = new System.Drawing.Point(129, 40);
-            this.bookAutherInput.Name = "bookAutherInput";
-            this.bookAutherInput.Size = new System.Drawing.Size(149, 25);
-            this.bookAutherInput.TabIndex = 19;
+            this.bookAuthorInput.Location = new System.Drawing.Point(129, 40);
+            this.bookAuthorInput.Name = "bookAuthorInput";
+            this.bookAuthorInput.Size = new System.Drawing.Size(149, 25);
+            this.bookAuthorInput.TabIndex = 19;
+            this.bookAuthorInput.TextChanged += new System.EventHandler(this.BookAutherInput_TextChanged);
             // 
             // bookNameInput
             // 
@@ -161,33 +207,14 @@
             // tabPage2
             // 
             this.tabPage2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabPage2.BackgroundImage")));
-            this.tabPage2.Controls.Add(this.richTextBox2);
-            this.tabPage2.Controls.Add(this.label8);
+            this.tabPage2.Controls.Add(this.dataGridView2);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(798, 401);
+            this.tabPage2.Size = new System.Drawing.Size(798, 516);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "已借阅书籍";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // richTextBox2
-            // 
-            this.richTextBox2.Location = new System.Drawing.Point(140, 63);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(186, 164);
-            this.richTextBox2.TabIndex = 1;
-            this.richTextBox2.Text = "";
-            this.richTextBox2.TextChanged += new System.EventHandler(this.RichTextBox2_TextChanged);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(67, 63);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(67, 15);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "书籍名：";
             // 
             // tabPage3
             // 
@@ -200,7 +227,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(798, 401);
+            this.tabPage3.Size = new System.Drawing.Size(798, 516);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "修改密码";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -264,25 +291,45 @@
             this.studentUsername.TabIndex = 8;
             this.studentUsername.Text = "label12";
             // 
-            // Student
+            // dataGridView2
+            // 
+            DataGridViewColumn[] dataGridViewColumn = new System.Windows.Forms.DataGridViewColumn[] {
+            this.book_name,
+            this.book_author,
+            this.book_type,
+            this.book_location,
+            this.book_number};
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToOrderColumns = true;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(dataGridViewColumn);
+            this.dataGridView2.Location = new System.Drawing.Point(34, 70);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.RowTemplate.Height = 27;
+            this.dataGridView2.Size = new System.Drawing.Size(745, 429);
+            this.dataGridView2.TabIndex = 18;
+            // 
+            // studentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(800, 570);
+            this.ClientSize = new System.Drawing.Size(807, 579);
             this.Controls.Add(this.studentUsername);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.修改密码);
-            this.Name = "Student";
+            this.Name = "studentForm";
             this.Text = "用户界面";
             this.修改密码.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -297,8 +344,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button searchBookButton;
-        private System.Windows.Forms.RichTextBox richTextBox2;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.TextBox textBox7;
@@ -307,8 +352,14 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label studentUsername;
         private System.Windows.Forms.TextBox bookTypeInput;
-        private System.Windows.Forms.TextBox bookAutherInput;
+        private System.Windows.Forms.TextBox bookAuthorInput;
         private System.Windows.Forms.TextBox bookNameInput;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn book_name;
+        private DataGridViewTextBoxColumn book_author;
+        private DataGridViewTextBoxColumn book_type;
+        private DataGridViewTextBoxColumn book_location;
+        private DataGridViewTextBoxColumn book_number;
+        private System.Windows.Forms.DataGridView dataGridView2;
     }
 }

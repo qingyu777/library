@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -43,6 +44,33 @@ namespace library
         }
 
         private void Button1_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Rows.Clear();
+
+            SqlConnect c = new SqlConnect();
+            Encoding unicode = Encoding.Unicode;
+            String sql = "SELECT * from book where book_name like '%" + bookNameInput.Text + "%' and book_type like '%" + bookTypeInput.Text + "%' and book_author like '%" + bookAuthorInput.Text + "%'";
+            Console.WriteLine(sql);
+            MySqlCommand cmd = new MySqlCommand(sql, c.myCon);
+            Book[] bookResult = c.GetBookArraySerchResult(cmd); //c.ExcuteOrder(sql, c.myCon)
+            if (bookResult.Length > 0)
+            {
+                foreach (Book book in bookResult)
+                {
+                    String[] bookinfo = { book.Book_name, book.Book_type, book.Book_author, book.Book_location, book.Book_number.ToString() };
+                    dataGridView1.Rows.Add(bookinfo);
+                }
+            }
+            else
+            {
+                MessageBox.Show("查询结果为空");
+            }
+
+
+            c.CloseMySqlConnection();
+        }
+
+        private void BookAutherInput_TextChanged(object sender, EventArgs e)
         {
 
         }
