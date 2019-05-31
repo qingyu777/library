@@ -14,6 +14,7 @@ namespace library
         private String book_author;
         private String book_location;
         private int book_number;
+        private int book_left_number;
 
         public int Book_id { get => book_id; set => book_id = value; }
         public string Book_name { get => book_name; set => book_name = value; }
@@ -21,5 +22,6 @@ namespace library
         public string Book_author { get => book_author; set => book_author = value; }
         public string Book_location { get => book_location; set => book_location = value; }
         public int Book_number { get => book_number; set => book_number = value; }
+        public int Book_left_number { get => book_left_number; set => book_left_number = value; }
     }
 }

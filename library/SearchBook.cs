@@ -55,7 +55,7 @@ namespace library
             dataGridView1.Rows.Clear();
 
             SqlConnect c = new SqlConnect();
-            String sql = "SELECT * from book where book_name like '%" + bookNameInput.Text + "%' and book_type like '%" + bookTypeInput.Text + "%' and book_author like '%" + bookAuthorInput.Text + "%'";
+            String sql = "SELECT *,book_number-(select count(*) from borrowRecord where borrowRecord.book_id = book.book_id and status_borrow = 'jcwh') as leftNumber from book where book_name like '%" + bookNameInput.Text + "%' and book_type like '%" + bookTypeInput.Text + "%' and book_author like '%" + bookAuthorInput.Text + "%'";
             Console.WriteLine(sql);
             MySqlCommand cmd = new MySqlCommand(sql, c.myCon);
             Book[] bookResult = c.GetBookArraySerchResult(cmd); //c.ExcuteOrder(sql, c.myCon)
@@ -63,7 +63,7 @@ namespace library
             {
                 foreach (Book book in bookResult)
                 {
-                    String[] bookinfo = { book.Book_id.ToString(), book.Book_name, book.Book_type, book.Book_author, book.Book_location, book.Book_number.ToString() };
+                    String[] bookinfo = { book.Book_id.ToString(), book.Book_name, book.Book_author, book.Book_type, book.Book_location, book.Book_left_number.ToString() };
                     dataGridView1.Rows.Add(bookinfo);
                 }
             }

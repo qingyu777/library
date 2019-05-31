@@ -86,7 +86,8 @@ namespace library
                             Book_type = msDr.GetString(2).Trim(),
                             Book_author = msDr.GetString(3).Trim(),
                             Book_location = msDr.GetString(4).Trim(),
-                            Book_number = msDr.GetInt32(5)
+                            Book_number = msDr.GetInt32(5),
+                            Book_left_number = msDr.GetInt32(6)
                         };
                         books.Add(book);
 
