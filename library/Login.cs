@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace library
 {
     public partial class Login : Form
@@ -29,7 +30,7 @@ namespace library
 
             if (c.IsSerchResult(c.ExcuteOrder("select * FROM admin where admin_username = '" + usernameInput.Text + "'and admin_passward ='" + passwardInput.Text + "'", c.myCon))>0)
             {
-                anotherForm4 = new AdministratorForm();
+                anotherForm4 = new AdministratorForm(usernameInput.Text);
                 this.Hide();
                 anotherForm4.ShowDialog();
                 Application.ExitThread();
@@ -61,7 +62,7 @@ namespace library
 
             if (c.IsSerchResult(c.ExcuteOrder("select * FROM student where student_username = '" + usernameInput.Text + "'and student_passward ='" + passwardInput.Text + "'", c.myCon)) > 0)
             {
-                anotherForm5 = new StudentForm();
+                anotherForm5 = new StudentForm(usernameInput.Text);
                 this.Hide();
                 anotherForm5.ShowDialog();
                 Application.ExitThread();

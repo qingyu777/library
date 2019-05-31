@@ -11,11 +11,15 @@ using System.Windows.Forms;
 
 namespace library
 {
+
     public partial class StudentForm : Form
     {
-        public StudentForm()
+        string username = "";
+        public StudentForm(string yhm  )
         {
+            this.username = yhm;
             InitializeComponent();
+            studentUsername.Text = yhm;
         }
 
         private void TabPage1_Click(object sender, EventArgs e)
@@ -94,6 +98,11 @@ namespace library
         }
 
         private void 借阅书籍ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void StudentUsername_Click(object sender, EventArgs e)
         {
 
         }

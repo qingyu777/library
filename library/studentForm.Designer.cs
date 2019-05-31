@@ -409,6 +409,7 @@ namespace library
             this.studentUsername.Size = new System.Drawing.Size(63, 15);
             this.studentUsername.TabIndex = 8;
             this.studentUsername.Text = "label12";
+            this.studentUsername.Click += new System.EventHandler(this.StudentUsername_Click);
             // 
             // StudentForm
             // 

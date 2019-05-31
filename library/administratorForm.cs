@@ -12,9 +12,12 @@ namespace library
 {
     public partial class AdministratorForm : Form
     {
-        public AdministratorForm()
+        String admin_username;
+        public AdministratorForm(String u)
         {
+            admin_username = u;
             InitializeComponent();
+            adminUsername.Text = u;
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -43,6 +46,11 @@ namespace library
         }
 
         private void Label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button2_Click_1(object sender, EventArgs e)
         {
 
         }
