@@ -12,8 +12,8 @@ namespace library
 {
     public partial class Login : Form
     {
-        Form4 anotherForm4;
-        Form5 anotherForm5;
+        Administrator anotherForm4;
+        Student anotherForm5;
         public Login()
         {
             InitializeComponent();
@@ -21,20 +21,20 @@ namespace library
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            textBox1.Text = textBox1.Text.Replace("'", " ").Trim();   //防止sql注入
-            textBox2.Text = textBox2.Text.Replace("'", " ").Trim();
+            usernameInput.Text = usernameInput.Text.Replace("'", " ").Trim();   //防止sql注入
+            passwardInput.Text = passwardInput.Text.Replace("'", " ").Trim();
             sqlconnect c = new sqlconnect();
 
             //"select * FROM admin where admin_username = '" + textBox1.Text + "'and admin_passward ='' or 'jjj'='jjj'"
 
-            if (c.isSerchResult(c.ExcuteOrder("select * FROM admin where admin_username = '" + textBox1.Text + "'and admin_passward ='" + textBox2.Text + "'", c.myCon))>0)
+            if (c.isSerchResult(c.ExcuteOrder("select * FROM admin where admin_username = '" + usernameInput.Text + "'and admin_passward ='" + passwardInput.Text + "'", c.myCon))>0)
             {
-                anotherForm4 = new Form4();
+                anotherForm4 = new Administrator();
                 this.Hide();
                 anotherForm4.ShowDialog();
                 Application.ExitThread();
             }
-            else if (c.isSerchResult(c.ExcuteOrder("select * FROM admin where admin_username = '" + textBox1.Text + "'", c.myCon))>0)
+            else if (c.isSerchResult(c.ExcuteOrder("select * FROM admin where admin_username = '" + usernameInput.Text + "'", c.myCon))>0)
             {
                 MessageBox.Show("密码错误");
             }
@@ -53,20 +53,20 @@ namespace library
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            textBox1.Text = textBox1.Text.Replace("'", " ").Trim();   //防止sql注入
-            textBox2.Text = textBox2.Text.Replace("'", " ").Trim();
+            usernameInput.Text = usernameInput.Text.Replace("'", " ").Trim();   //防止sql注入
+            passwardInput.Text = passwardInput.Text.Replace("'", " ").Trim();
             sqlconnect c = new sqlconnect();
 
             //"select * FROM admin where admin_username = '" + textBox1.Text + "'and admin_passward ='' or 'jjj'='jjj'"
 
-            if (c.isSerchResult(c.ExcuteOrder("select * FROM student where student_username = '" + textBox1.Text + "'and student_passward ='" + textBox2.Text + "'", c.myCon)) > 0)
+            if (c.isSerchResult(c.ExcuteOrder("select * FROM student where student_username = '" + usernameInput.Text + "'and student_passward ='" + passwardInput.Text + "'", c.myCon)) > 0)
             {
-                anotherForm5 = new Form5();
+                anotherForm5 = new Student();
                 this.Hide();
                 anotherForm5.ShowDialog();
                 Application.ExitThread();
             }
-            else if (c.isSerchResult(c.ExcuteOrder("select * FROM student where student_username = '" + textBox1.Text + "'", c.myCon)) > 0)
+            else if (c.isSerchResult(c.ExcuteOrder("select * FROM student where student_username = '" + usernameInput.Text + "'", c.myCon)) > 0)
             {
                 MessageBox.Show("密码错误");
             }

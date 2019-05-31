@@ -56,16 +56,7 @@ namespace library
 
             sqlconnect c = new sqlconnect();
             Encoding unicode = Encoding.Unicode;
-            String sql = "";
-            if (textBox1.Text != string.Empty)
-            {
-                sql = "select * from book where book_name like '%" + textBox1.Text + "%'";
-            }
-            else
-            {
-                sql = "select * from book";
-            }
-            
+            String sql = "SELECT * from book where book_name like '%" + bookNameInput.Text + "%' and book_type like '%" + bookTypeInput.Text + "%' and book_author like '%" + bookAuthorInput.Text + "%'";
             Console.WriteLine(sql);
             MySqlCommand cmd = new MySqlCommand(sql, c.myCon);
             Book[] bookResult = c.GetBookArraySerchResult(cmd); //c.ExcuteOrder(sql, c.myCon)
@@ -125,5 +116,9 @@ namespace library
             }
         }
 
+        private void TextBox1222_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

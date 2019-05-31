@@ -32,8 +32,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.userNameInput = new System.Windows.Forms.TextBox();
+            this.passwardInput = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // button1
@@ -64,20 +64,20 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "密码：";
             // 
-            // textBox1
+            // userNameInput
             // 
-            this.textBox1.Location = new System.Drawing.Point(275, 82);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(192, 25);
-            this.textBox1.TabIndex = 3;
-            this.textBox1.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
+            this.userNameInput.Location = new System.Drawing.Point(275, 82);
+            this.userNameInput.Name = "userNameInput";
+            this.userNameInput.Size = new System.Drawing.Size(192, 25);
+            this.userNameInput.TabIndex = 3;
+            this.userNameInput.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
             // 
-            // textBox2
+            // passwardInput
             // 
-            this.textBox2.Location = new System.Drawing.Point(275, 136);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(192, 25);
-            this.textBox2.TabIndex = 4;
+            this.passwardInput.Location = new System.Drawing.Point(275, 136);
+            this.passwardInput.Name = "passwardInput";
+            this.passwardInput.Size = new System.Drawing.Size(192, 25);
+            this.passwardInput.TabIndex = 4;
             // 
             // Form3
             // 
@@ -85,8 +85,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.passwardInput);
+            this.Controls.Add(this.userNameInput);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
@@ -103,7 +103,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox userNameInput;
+        private System.Windows.Forms.TextBox passwardInput;
     }
 }
