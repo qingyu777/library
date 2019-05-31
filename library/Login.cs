@@ -12,8 +12,8 @@ namespace library
 {
     public partial class Login : Form
     {
-        Administrator anotherForm4;
-        Student anotherForm5;
+        administratorForm anotherForm4;
+        studentForm anotherForm5;
         public Login()
         {
             InitializeComponent();
@@ -29,7 +29,7 @@ namespace library
 
             if (c.isSerchResult(c.ExcuteOrder("select * FROM admin where admin_username = '" + usernameInput.Text + "'and admin_passward ='" + passwardInput.Text + "'", c.myCon))>0)
             {
-                anotherForm4 = new Administrator();
+                anotherForm4 = new administratorForm();
                 this.Hide();
                 anotherForm4.ShowDialog();
                 Application.ExitThread();
@@ -61,7 +61,7 @@ namespace library
 
             if (c.isSerchResult(c.ExcuteOrder("select * FROM student where student_username = '" + usernameInput.Text + "'and student_passward ='" + passwardInput.Text + "'", c.myCon)) > 0)
             {
-                anotherForm5 = new Student();
+                anotherForm5 = new studentForm();
                 this.Hide();
                 anotherForm5.ShowDialog();
                 Application.ExitThread();

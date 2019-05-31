@@ -1,6 +1,6 @@
 ﻿namespace library
 {
-    partial class Student
+    partial class studentForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Student));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(studentForm));
             this.修改密码 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.bookTypeInput = new System.Windows.Forms.TextBox();
+            this.bookAutherInput = new System.Windows.Forms.TextBox();
+            this.bookNameInput = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.searchBookButton = new System.Windows.Forms.Button();
@@ -46,11 +50,9 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.studentUsername = new System.Windows.Forms.Label();
-            this.bookNameInput = new System.Windows.Forms.TextBox();
-            this.bookAutherInput = new System.Windows.Forms.TextBox();
-            this.bookTypeInput = new System.Windows.Forms.TextBox();
             this.修改密码.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.SuspendLayout();
@@ -63,12 +65,13 @@
             this.修改密码.Location = new System.Drawing.Point(-6, 22);
             this.修改密码.Name = "修改密码";
             this.修改密码.SelectedIndex = 0;
-            this.修改密码.Size = new System.Drawing.Size(806, 430);
+            this.修改密码.Size = new System.Drawing.Size(806, 545);
             this.修改密码.TabIndex = 3;
             // 
             // tabPage1
             // 
             this.tabPage1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabPage1.BackgroundImage")));
+            this.tabPage1.Controls.Add(this.dataGridView1);
             this.tabPage1.Controls.Add(this.bookTypeInput);
             this.tabPage1.Controls.Add(this.bookAutherInput);
             this.tabPage1.Controls.Add(this.bookNameInput);
@@ -79,11 +82,43 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(798, 401);
+            this.tabPage1.Size = new System.Drawing.Size(798, 516);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "查找书籍";
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.TabPage1_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(29, 71);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 27;
+            this.dataGridView1.Size = new System.Drawing.Size(701, 439);
+            this.dataGridView1.TabIndex = 21;
+            // 
+            // bookTypeInput
+            // 
+            this.bookTypeInput.Location = new System.Drawing.Point(455, 14);
+            this.bookTypeInput.Name = "bookTypeInput";
+            this.bookTypeInput.Size = new System.Drawing.Size(136, 25);
+            this.bookTypeInput.TabIndex = 20;
+            // 
+            // bookAutherInput
+            // 
+            this.bookAutherInput.Location = new System.Drawing.Point(129, 40);
+            this.bookAutherInput.Name = "bookAutherInput";
+            this.bookAutherInput.Size = new System.Drawing.Size(149, 25);
+            this.bookAutherInput.TabIndex = 19;
+            // 
+            // bookNameInput
+            // 
+            this.bookNameInput.Location = new System.Drawing.Point(129, 7);
+            this.bookNameInput.Name = "bookNameInput";
+            this.bookNameInput.Size = new System.Drawing.Size(149, 25);
+            this.bookNameInput.TabIndex = 18;
             // 
             // label11
             // 
@@ -131,7 +166,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(798, 364);
+            this.tabPage2.Size = new System.Drawing.Size(798, 401);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "已借阅书籍";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -165,7 +200,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(798, 364);
+            this.tabPage3.Size = new System.Drawing.Size(798, 401);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "修改密码";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -229,33 +264,12 @@
             this.studentUsername.TabIndex = 8;
             this.studentUsername.Text = "label12";
             // 
-            // bookNameInput
-            // 
-            this.bookNameInput.Location = new System.Drawing.Point(129, 7);
-            this.bookNameInput.Name = "bookNameInput";
-            this.bookNameInput.Size = new System.Drawing.Size(149, 25);
-            this.bookNameInput.TabIndex = 18;
-            // 
-            // bookAutherInput
-            // 
-            this.bookAutherInput.Location = new System.Drawing.Point(129, 40);
-            this.bookAutherInput.Name = "bookAutherInput";
-            this.bookAutherInput.Size = new System.Drawing.Size(149, 25);
-            this.bookAutherInput.TabIndex = 19;
-            // 
-            // bookTypeInput
-            // 
-            this.bookTypeInput.Location = new System.Drawing.Point(455, 14);
-            this.bookTypeInput.Name = "bookTypeInput";
-            this.bookTypeInput.Size = new System.Drawing.Size(136, 25);
-            this.bookTypeInput.TabIndex = 20;
-            // 
             // Student
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 570);
             this.Controls.Add(this.studentUsername);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.修改密码);
@@ -264,6 +278,7 @@
             this.修改密码.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
@@ -294,5 +309,6 @@
         private System.Windows.Forms.TextBox bookTypeInput;
         private System.Windows.Forms.TextBox bookAutherInput;
         private System.Windows.Forms.TextBox bookNameInput;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

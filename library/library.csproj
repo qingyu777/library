@@ -68,17 +68,17 @@
     <Compile Include="Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
-    <Compile Include="Administrator.cs">
+    <Compile Include="administratorForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Administrator.Designer.cs">
-      <DependentUpon>Administrator.cs</DependentUpon>
+    <Compile Include="administratorForm.Designer.cs">
+      <DependentUpon>administratorForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Student.cs">
+    <Compile Include="studentForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Student.Designer.cs">
-      <DependentUpon>Student.cs</DependentUpon>
+    <Compile Include="studentForm.Designer.cs">
+      <DependentUpon>studentForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SearchBook.cs">
       <SubType>Form</SubType>
@@ -98,11 +98,11 @@
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Administrator.resx">
-      <DependentUpon>Administrator.cs</DependentUpon>
+    <EmbeddedResource Include="administratorForm.resx">
+      <DependentUpon>administratorForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Student.resx">
-      <DependentUpon>Student.cs</DependentUpon>
+    <EmbeddedResource Include="studentForm.resx">
+      <DependentUpon>studentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SearchBook.resx">
       <DependentUpon>SearchBook.cs</DependentUpon>

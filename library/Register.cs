@@ -39,16 +39,19 @@ namespace library
             }
             else
             {
-                MySqlCommand myCom = c.ExcuteOrder("INSERT INTO student VALUES (null,'" + userNameInput.Text + "','" + passwardInput.Text + "')", c.myCon);
+                MySqlCommand myCom = c.ExcuteOrder("INSERT INTO student(student_username,student_passward) VALUES ('" + userNameInput.Text + "','" + passwardInput.Text + "')", c.myCon);
                 if(c.GetDelInsertUpdateResult(myCom) > 0)
+                {
                     MessageBox.Show("注册成功！");
+                    anotherForm = new Login();
+                    this.Hide();
+                    anotherForm.ShowDialog();
+                    Application.ExitThread();
+                }
+                    
                 else
                     MessageBox.Show("请勿输入\"'\"等特殊字符！！！");
             }
-            anotherForm = new Login();
-            this.Hide();
-            anotherForm.ShowDialog();
-            Application.ExitThread();
         }
 
         private void TextBox1_TextChanged(object sender, EventArgs e)

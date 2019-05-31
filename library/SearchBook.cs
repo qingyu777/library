@@ -97,11 +97,6 @@ namespace library
 
         }
 
-        private void DataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         //在右键点击时，将当前行选中
         private void DataGridView1_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
         {
