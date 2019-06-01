@@ -153,7 +153,7 @@ namespace library
                 if(studentPasswardInput.Text.Length > 0)
                 {
                     if (c.GetDelInsertUpdateResult(c.ExcuteOrder("update student set student_passward = '" + studentPasswardInput.Text + "' where student_username = '" + studentIdInput.Text + "'", c.myCon)) > 0)
-                        MessageBox.Show("修改成功");
+                        MessageBox.Show("密码修改成功");
                     else
                         MessageBox.Show("请输入正确的密码格式");
                 }
@@ -162,6 +162,26 @@ namespace library
             }
             else
                 MessageBox.Show("不存在该学生id");
+            c.CloseMySqlConnection();
+        }
+
+        private void Button4_Click_1(object sender, EventArgs e)
+        {
+            SqlConnect c = new SqlConnect();
+            if (c.IsSerchResult(c.ExcuteOrder("select * from admin where admin_username = '"+ admin_username + "' and admin_passward = '"+ oldAdminPasswardInput.Text + "'", c.myCon)) > 0)
+            {
+                if (newAdminPasswardInput.Text.Length > 0)
+                {
+                    if (c.GetDelInsertUpdateResult(c.ExcuteOrder("update admin set admin_passward = '" + newAdminPasswardInput.Text + "' where admin_username = '" + admin_username + "'", c.myCon)) > 0)
+                        MessageBox.Show("密码修改成功");
+                    else
+                        MessageBox.Show("请输入正确的密码格式！");
+                }
+                else
+                    MessageBox.Show("请输入密码！");
+            }
+            else
+                MessageBox.Show("原密码输入错误！");
             c.CloseMySqlConnection();
         }
     }

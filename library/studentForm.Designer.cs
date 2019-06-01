@@ -360,6 +360,7 @@ namespace library
             // 
             this.newPasswardInput.Location = new System.Drawing.Point(179, 108);
             this.newPasswardInput.Name = "newPasswardInput";
+            this.newPasswardInput.PasswordChar = '*';
             this.newPasswardInput.Size = new System.Drawing.Size(201, 25);
             this.newPasswardInput.TabIndex = 3;
             // 

@@ -670,6 +670,7 @@ namespace library
             this.button4.TabIndex = 3;
             this.button4.Text = "修改密码";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.Button4_Click_1);
             // 
             // oldAdminPasswardInput
             // 
