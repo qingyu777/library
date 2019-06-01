@@ -211,5 +211,15 @@ namespace library
             }
             c.CloseMySqlConnection();
         }
+
+        private void tabPage5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

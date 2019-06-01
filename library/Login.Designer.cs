@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.adminLoginButton = new System.Windows.Forms.Button();
             this.studentLoginButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,9 +38,10 @@
             // 
             // adminLoginButton
             // 
-            this.adminLoginButton.Location = new System.Drawing.Point(236, 259);
+            this.adminLoginButton.Location = new System.Drawing.Point(177, 207);
+            this.adminLoginButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.adminLoginButton.Name = "adminLoginButton";
-            this.adminLoginButton.Size = new System.Drawing.Size(106, 34);
+            this.adminLoginButton.Size = new System.Drawing.Size(78, 27);
             this.adminLoginButton.TabIndex = 0;
             this.adminLoginButton.Text = "管理员登陆";
             this.adminLoginButton.UseVisualStyleBackColor = true;
@@ -49,9 +49,10 @@
             // 
             // studentLoginButton
             // 
-            this.studentLoginButton.Location = new System.Drawing.Point(435, 259);
+            this.studentLoginButton.Location = new System.Drawing.Point(326, 207);
+            this.studentLoginButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.studentLoginButton.Name = "studentLoginButton";
-            this.studentLoginButton.Size = new System.Drawing.Size(96, 34);
+            this.studentLoginButton.Size = new System.Drawing.Size(72, 27);
             this.studentLoginButton.TabIndex = 1;
             this.studentLoginButton.Text = "用户登陆";
             this.studentLoginButton.UseVisualStyleBackColor = true;
@@ -60,9 +61,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(233, 92);
+            this.label1.Location = new System.Drawing.Point(175, 78);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 15);
+            this.label1.Size = new System.Drawing.Size(41, 12);
             this.label1.TabIndex = 2;
             this.label1.Text = "账号：";
             this.label1.Click += new System.EventHandler(this.Label1_Click);
@@ -70,40 +72,44 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(233, 158);
+            this.label2.Location = new System.Drawing.Point(175, 122);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 15);
+            this.label2.Size = new System.Drawing.Size(41, 12);
             this.label2.TabIndex = 3;
             this.label2.Text = "密码：";
             // 
             // usernameInput
             // 
-            this.usernameInput.Location = new System.Drawing.Point(291, 92);
+            this.usernameInput.Location = new System.Drawing.Point(218, 74);
+            this.usernameInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.usernameInput.Name = "usernameInput";
-            this.usernameInput.Size = new System.Drawing.Size(223, 25);
+            this.usernameInput.Size = new System.Drawing.Size(168, 21);
             this.usernameInput.TabIndex = 4;
             this.usernameInput.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
             // 
             // passwardInput
             // 
-            this.passwardInput.Location = new System.Drawing.Point(291, 147);
+            this.passwardInput.Location = new System.Drawing.Point(218, 118);
+            this.passwardInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.passwardInput.Name = "passwardInput";
             this.passwardInput.PasswordChar = '*';
-            this.passwardInput.Size = new System.Drawing.Size(223, 25);
+            this.passwardInput.Size = new System.Drawing.Size(168, 21);
             this.passwardInput.TabIndex = 5;
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.ClientSize = new System.Drawing.Size(600, 360);
             this.Controls.Add(this.passwardInput);
             this.Controls.Add(this.usernameInput);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.studentLoginButton);
             this.Controls.Add(this.adminLoginButton);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Login";
             this.Text = "登陆界面";
             this.ResumeLayout(false);

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.loginBotton = new System.Windows.Forms.Button();
             this.registerBotton = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -42,9 +41,10 @@
             // 
             // loginBotton
             // 
-            this.loginBotton.Location = new System.Drawing.Point(258, 258);
+            this.loginBotton.Location = new System.Drawing.Point(194, 212);
+            this.loginBotton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.loginBotton.Name = "loginBotton";
-            this.loginBotton.Size = new System.Drawing.Size(90, 35);
+            this.loginBotton.Size = new System.Drawing.Size(68, 28);
             this.loginBotton.TabIndex = 0;
             this.loginBotton.Text = "登陆";
             this.loginBotton.UseVisualStyleBackColor = true;
@@ -52,9 +52,10 @@
             // 
             // registerBotton
             // 
-            this.registerBotton.Location = new System.Drawing.Point(441, 258);
+            this.registerBotton.Location = new System.Drawing.Point(331, 212);
+            this.registerBotton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.registerBotton.Name = "registerBotton";
-            this.registerBotton.Size = new System.Drawing.Size(90, 35);
+            this.registerBotton.Size = new System.Drawing.Size(68, 28);
             this.registerBotton.TabIndex = 1;
             this.registerBotton.Text = "注册";
             this.registerBotton.UseVisualStyleBackColor = true;
@@ -72,44 +73,47 @@
             this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripTextBox1});
             this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(161, 33);
+            this.contextMenuStrip2.Size = new System.Drawing.Size(161, 29);
             // 
             // toolStripTextBox1
             // 
             this.toolStripTextBox1.Name = "toolStripTextBox1";
-            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 27);
+            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 23);
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label1.Location = new System.Drawing.Point(192, 100);
+            this.label1.Location = new System.Drawing.Point(132, 80);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(427, 47);
+            this.label1.Size = new System.Drawing.Size(336, 38);
             this.label1.TabIndex = 4;
             this.label1.Text = "欢迎使用图书管理系统";
             this.label1.Click += new System.EventHandler(this.Label1_Click_1);
             // 
             // searchBookButton
             // 
-            this.searchBookButton.Location = new System.Drawing.Point(681, 25);
+            this.searchBookButton.Location = new System.Drawing.Point(511, 20);
+            this.searchBookButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.searchBookButton.Name = "searchBookButton";
-            this.searchBookButton.Size = new System.Drawing.Size(107, 35);
+            this.searchBookButton.Size = new System.Drawing.Size(80, 28);
             this.searchBookButton.TabIndex = 5;
-            this.searchBookButton.Text = "游客查询：";
+            this.searchBookButton.Text = "游客查询";
             this.searchBookButton.UseVisualStyleBackColor = true;
             this.searchBookButton.Click += new System.EventHandler(this.Button3_Click);
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.ClientSize = new System.Drawing.Size(600, 360);
             this.Controls.Add(this.searchBookButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.registerBotton);
             this.Controls.Add(this.loginBotton);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Main";
             this.Text = "欢迎使用图书管理系统";
             this.Load += new System.EventHandler(this.Form1_Load);
