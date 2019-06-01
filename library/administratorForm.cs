@@ -184,5 +184,32 @@ namespace library
                 MessageBox.Show("原密码输入错误！");
             c.CloseMySqlConnection();
         }
+
+        private void Button6_Click(object sender, EventArgs e)
+        {
+            dataGridViewForAdminSearchBorrow.Rows.Clear();
+            SqlConnect c = new SqlConnect();
+            String sql = "";
+            if(borrowRecordStudentUsernameInput.Text.Length > 0)
+                sql = "SELECT id,(SELECT book_name from book where book.book_id = borrowRecord.book_id),(SELECT student_username from student where student.student_id = borrowRecord.student_id),time_borrow from borrowRecord where borrowRecord.student_id IN (SELECT student_id from student WHERE student_username = '" + borrowRecordStudentUsernameInput.Text + "') and borrowRecord.book_id IN (SELECT book_id from book WHERE book_name like '%" + borrowRecordBookNameInput.Text + "%')  and borrowRecord.status_borrow = 'jcwh'";
+            else
+                sql = "SELECT id,(SELECT book_name from book where book.book_id = borrowRecord.book_id),(SELECT student_username from student where student.student_id = borrowRecord.student_id),time_borrow from borrowRecord where borrowRecord.book_id IN (SELECT book_id from book WHERE book_name like '%" + borrowRecordBookNameInput.Text + "%')  and borrowRecord.status_borrow = 'jcwh'";
+            Console.WriteLine(sql);
+            MySqlCommand cmd = new MySqlCommand(sql, c.myCon);
+            borrowRecord[] borrowResult = c.GetBookBorrowRecordArraySerchResult2(cmd); //c.ExcuteOrder(sql, c.myCon)
+            if (borrowResult.Length > 0)
+            {
+                foreach (borrowRecord aBorrowRecord in borrowResult)
+                {
+                    String[] borrowRecordArray = { aBorrowRecord.Borrow_record_id.ToString(), aBorrowRecord.Book_name, aBorrowRecord.Student_name, aBorrowRecord.Book_borrow_time };
+                    dataGridViewForAdminSearchBorrow.Rows.Add(borrowRecordArray);
+                }
+            }
+            else
+            {
+                MessageBox.Show("查询结果为空");
+            }
+            c.CloseMySqlConnection();
+        }
     }
 }

@@ -168,6 +168,42 @@ namespace library
                 Console.WriteLine("获取查询结果集出错" + e.Message);
                 return a;
             }
+        }public borrowRecord[] GetBookBorrowRecordArraySerchResult2(MySqlCommand myCom)    //获取书籍借阅情况查询结果2(包含借书者信息)  
+        {
+            try
+            {
+                MySqlDataReader msDr = myCom.ExecuteReader();
+                int column = msDr.FieldCount;  //获取集合列数 
+                                               //ArrayList big = new ArrayList();
+                int j = 0;
+                List<borrowRecord> borrowRecords = new List<borrowRecord>();
+                while (msDr.Read())
+                {
+                    if (msDr.HasRows)
+                    {
+                        borrowRecord borrowRecord = new borrowRecord
+                        {
+                            Borrow_record_id = msDr.GetInt32(0),
+                            Book_name = msDr.GetString(1).Trim(),
+                            Student_name = msDr.GetString(2).Trim(),
+                            Book_borrow_time = msDr.GetString(3).Trim(),
+                        };
+                        borrowRecords.Add(borrowRecord);
+                    }
+                    j++;
+                }
+                borrowRecord[] borrowRecordsArray = borrowRecords.ToArray();
+                msDr.Close(); //关闭数据集
+                return borrowRecordsArray;
+            }
+
+            catch (Exception e)
+            {
+                borrowRecord[] a = new borrowRecord[0];
+                Console.WriteLine(e.Data);
+                Console.WriteLine("获取查询结果集出错" + e.Message);
+                return a;
+            }
         }
 
         public int IsSerchResult(MySqlCommand myCom)    //判断查询是否有结果  
