@@ -111,6 +111,7 @@ namespace library
                 {
                     dataGridViewBookBorrowed.ClearSelection();
                     dataGridViewBookBorrowed.Rows[e.RowIndex].Selected = true;
+                    row = e.RowIndex;
                 }
                 menuForUserSearchedBooks.Show(MousePosition.X, MousePosition.Y);
             }
@@ -182,7 +183,14 @@ namespace library
 
         private void 归还书籍ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            SqlConnect c = new SqlConnect();
+            String borrowBookId = dataGridViewBookBorrowed.Rows[row].Cells[0].Value.ToString();
+            String sql = "UPDATE borrowRecord set status_borrow = 'yihuan' where id = '"+ borrowBookId + "' AND student_id = '"+id+"'";
+            int a = c.GetDelInsertUpdateResult(c.ExcuteOrder(sql, c.myCon));
+            MessageBox.Show("归还成功"+a);
+            Console.WriteLine(borrowBookId);
+            Console.WriteLine(sql);
+            c.CloseMySqlConnection();
         }
     }
 }

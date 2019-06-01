@@ -53,7 +53,7 @@ namespace library
             // 
             // searchBotton
             // 
-            this.searchBotton.Location = new System.Drawing.Point(757, 16);
+            this.searchBotton.Location = new System.Drawing.Point(733, 18);
             this.searchBotton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.searchBotton.Name = "searchBotton";
             this.searchBotton.Size = new System.Drawing.Size(91, 36);
@@ -64,7 +64,7 @@ namespace library
             // 
             // backBotton
             // 
-            this.backBotton.Location = new System.Drawing.Point(757, 58);
+            this.backBotton.Location = new System.Drawing.Point(733, 60);
             this.backBotton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.backBotton.Name = "backBotton";
             this.backBotton.Size = new System.Drawing.Size(91, 38);
@@ -76,7 +76,7 @@ namespace library
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(67, 25);
+            this.label3.Location = new System.Drawing.Point(43, 27);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(67, 15);
             this.label3.TabIndex = 5;
@@ -85,7 +85,7 @@ namespace library
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(52, 68);
+            this.label4.Location = new System.Drawing.Point(28, 70);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(82, 15);
             this.label4.TabIndex = 6;
@@ -95,7 +95,7 @@ namespace library
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(399, 25);
+            this.label1.Location = new System.Drawing.Point(375, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(82, 15);
             this.label1.TabIndex = 9;
@@ -103,7 +103,7 @@ namespace library
             // 
             // bookNameInput
             // 
-            this.bookNameInput.Location = new System.Drawing.Point(149, 18);
+            this.bookNameInput.Location = new System.Drawing.Point(125, 20);
             this.bookNameInput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bookNameInput.Name = "bookNameInput";
             this.bookNameInput.Size = new System.Drawing.Size(203, 25);
@@ -112,7 +112,7 @@ namespace library
             // 
             // bookTypeInput
             // 
-            this.bookTypeInput.Location = new System.Drawing.Point(504, 18);
+            this.bookTypeInput.Location = new System.Drawing.Point(480, 20);
             this.bookTypeInput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bookTypeInput.Name = "bookTypeInput";
             this.bookTypeInput.Size = new System.Drawing.Size(203, 25);
@@ -120,7 +120,7 @@ namespace library
             // 
             // bookAuthorInput
             // 
-            this.bookAuthorInput.Location = new System.Drawing.Point(149, 55);
+            this.bookAuthorInput.Location = new System.Drawing.Point(125, 57);
             this.bookAuthorInput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bookAuthorInput.Name = "bookAuthorInput";
             this.bookAuthorInput.Size = new System.Drawing.Size(203, 25);
@@ -130,6 +130,7 @@ namespace library
             // 
             this.dataGridViewForGuast.AllowUserToAddRows = false;
             this.dataGridViewForGuast.AllowUserToOrderColumns = true;
+            this.dataGridViewForGuast.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewForGuast.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewForGuast.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.guest_search_book_id,
@@ -138,7 +139,7 @@ namespace library
             this.guest_search_book_type,
             this.guest_search_book_location,
             this.guest_search_book_number});
-            this.dataGridViewForGuast.Location = new System.Drawing.Point(23, 110);
+            this.dataGridViewForGuast.Location = new System.Drawing.Point(-1, 112);
             this.dataGridViewForGuast.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridViewForGuast.Name = "dataGridViewForGuast";
             this.dataGridViewForGuast.ReadOnly = true;
@@ -158,7 +159,6 @@ namespace library
             this.guest_search_book_name.HeaderText = "书名";
             this.guest_search_book_name.Name = "guest_search_book_name";
             this.guest_search_book_name.ReadOnly = true;
-            this.guest_search_book_name.Width = 140;
             // 
             // guest_search_book_author
             // 
@@ -183,7 +183,6 @@ namespace library
             this.guest_search_book_number.HeaderText = "剩余可借数量";
             this.guest_search_book_number.Name = "guest_search_book_number";
             this.guest_search_book_number.ReadOnly = true;
-            this.guest_search_book_number.Width = 130;
             // 
             // contextMenuStripForBooks
             // 
@@ -196,7 +195,7 @@ namespace library
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1004, 552);
+            this.ClientSize = new System.Drawing.Size(947, 529);
             this.Controls.Add(this.dataGridViewForGuast);
             this.Controls.Add(this.bookAuthorInput);
             this.Controls.Add(this.bookTypeInput);

@@ -43,7 +43,7 @@ namespace library
 
         private void Button1_Click_1(object sender, EventArgs e)
         {
-            dataGridViewForAdmin.Rows.Clear();
+            dataGridViewForAdminSearchBook.Rows.Clear();
 
             SqlConnect c = new SqlConnect();
             String sql;
@@ -63,7 +63,7 @@ namespace library
                 {
                     book_borrow_number = c.GetSerchResult(c.ExcuteOrder("SELECT COUNT(*) FROM borrowRecord where book_id = "+ book.Book_id, c.myCon));
                     String[] bookinfo = { book.Book_id.ToString(), book.Book_name, book.Book_type, book.Book_author, book.Book_location, book.Book_number.ToString(), book.Book_left_number.ToString() };
-                    dataGridViewForAdmin.Rows.Add(bookinfo);
+                    dataGridViewForAdminSearchBook.Rows.Add(bookinfo);
                 }
             }
             else
@@ -79,10 +79,10 @@ namespace library
         {
             if (e.Button == System.Windows.Forms.MouseButtons.Right && e.RowIndex >= 0)
             {
-                if (!dataGridViewForAdmin.Rows[e.RowIndex].Selected)
+                if (!dataGridViewForAdminSearchBook.Rows[e.RowIndex].Selected)
                 {
-                    dataGridViewForAdmin.ClearSelection();
-                    dataGridViewForAdmin.Rows[e.RowIndex].Selected = true;
+                    dataGridViewForAdminSearchBook.ClearSelection();
+                    dataGridViewForAdminSearchBook.Rows[e.RowIndex].Selected = true;
                 }
                 menuForAdmin.Show(MousePosition.X, MousePosition.Y);
             }
@@ -107,7 +107,8 @@ namespace library
                 else
                     MessageBox.Show("请输入正确的书籍信息格式！");
             }
-            
+            c.CloseMySqlConnection();
+
         }
         
         private void TabPage1_Click(object sender, EventArgs e)
@@ -136,6 +137,32 @@ namespace library
             }
             else
                 MessageBox.Show("不存在该书籍id！");
+            c.CloseMySqlConnection();
+        }
+
+        private void 删除书籍信息ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button3_Click_1(object sender, EventArgs e)
+        {
+            SqlConnect c = new SqlConnect();
+            if(c.IsSerchResult(c.ExcuteOrder("select * from student where student_username = '"+studentIdInput.Text+"'",c.myCon))>0)
+            {
+                if(studentPasswardInput.Text.Length > 0)
+                {
+                    if (c.GetDelInsertUpdateResult(c.ExcuteOrder("update student set student_passward = '" + studentPasswardInput.Text + "' where student_username = '" + studentIdInput.Text + "'", c.myCon)) > 0)
+                        MessageBox.Show("修改成功");
+                    else
+                        MessageBox.Show("请输入正确的密码格式");
+                }
+                else
+                    MessageBox.Show("请输入密码！");
+            }
+            else
+                MessageBox.Show("不存在该学生id");
+            c.CloseMySqlConnection();
         }
     }
 }

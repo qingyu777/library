@@ -35,7 +35,7 @@ namespace library
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.dataGridViewForAdmin = new System.Windows.Forms.DataGridView();
+            this.dataGridViewForAdminSearchBook = new System.Windows.Forms.DataGridView();
             this.book_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.book_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.book_author = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,8 +43,6 @@ namespace library
             this.book_location = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.book_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.book_left_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.menuForAdmin = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.删除书籍信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bookLocationInput = new System.Windows.Forms.TextBox();
             this.bookTypeInput = new System.Windows.Forms.TextBox();
             this.bookAuthorInput = new System.Windows.Forms.TextBox();
@@ -81,12 +79,27 @@ namespace library
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
             this.adminUsername = new System.Windows.Forms.Label();
+            this.menuForAdmin = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.label3 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.studentIdInput = new System.Windows.Forms.TextBox();
+            this.studentPasswardInput = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.oldAdminPasswardInput = new System.Windows.Forms.TextBox();
+            this.newAdminPasswardInput = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewForAdmin)).BeginInit();
-            this.menuForAdmin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewForAdminSearchBook)).BeginInit();
             this.tabPage2.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            this.tabPage5.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -102,6 +115,9 @@ namespace library
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Location = new System.Drawing.Point(-3, 63);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -112,7 +128,7 @@ namespace library
             // 
             this.tabPage1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabPage1.BackgroundImage")));
             this.tabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.tabPage1.Controls.Add(this.dataGridViewForAdmin);
+            this.tabPage1.Controls.Add(this.dataGridViewForAdminSearchBook);
             this.tabPage1.Controls.Add(this.bookLocationInput);
             this.tabPage1.Controls.Add(this.bookTypeInput);
             this.tabPage1.Controls.Add(this.bookAuthorInput);
@@ -133,12 +149,13 @@ namespace library
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.TabPage1_Click);
             // 
-            // dataGridViewForAdmin
+            // dataGridViewForAdminSearchBook
             // 
-            this.dataGridViewForAdmin.AllowUserToAddRows = false;
-            this.dataGridViewForAdmin.AllowUserToOrderColumns = true;
-            this.dataGridViewForAdmin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewForAdmin.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewForAdminSearchBook.AllowUserToAddRows = false;
+            this.dataGridViewForAdminSearchBook.AllowUserToOrderColumns = true;
+            this.dataGridViewForAdminSearchBook.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewForAdminSearchBook.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewForAdminSearchBook.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.book_id,
             this.book_name,
             this.book_author,
@@ -146,15 +163,14 @@ namespace library
             this.book_location,
             this.book_number,
             this.book_left_number});
-            this.dataGridViewForAdmin.ContextMenuStrip = this.menuForAdmin;
-            this.dataGridViewForAdmin.Location = new System.Drawing.Point(3, 133);
-            this.dataGridViewForAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridViewForAdmin.Name = "dataGridViewForAdmin";
-            this.dataGridViewForAdmin.ReadOnly = true;
-            this.dataGridViewForAdmin.RowTemplate.Height = 27;
-            this.dataGridViewForAdmin.Size = new System.Drawing.Size(880, 455);
-            this.dataGridViewForAdmin.TabIndex = 18;
-            this.dataGridViewForAdmin.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DataGridViewUserSearchBookResult_CellMouseDown);
+            this.dataGridViewForAdminSearchBook.Location = new System.Drawing.Point(3, 102);
+            this.dataGridViewForAdminSearchBook.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridViewForAdminSearchBook.Name = "dataGridViewForAdminSearchBook";
+            this.dataGridViewForAdminSearchBook.ReadOnly = true;
+            this.dataGridViewForAdminSearchBook.RowTemplate.Height = 27;
+            this.dataGridViewForAdminSearchBook.Size = new System.Drawing.Size(880, 486);
+            this.dataGridViewForAdminSearchBook.TabIndex = 18;
+            this.dataGridViewForAdminSearchBook.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DataGridViewUserSearchBookResult_CellMouseDown);
             // 
             // book_id
             // 
@@ -205,20 +221,6 @@ namespace library
             this.book_left_number.Name = "book_left_number";
             this.book_left_number.ReadOnly = true;
             this.book_left_number.Width = 89;
-            // 
-            // menuForAdmin
-            // 
-            this.menuForAdmin.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuForAdmin.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.删除书籍信息ToolStripMenuItem});
-            this.menuForAdmin.Name = "menuForAdmin";
-            this.menuForAdmin.Size = new System.Drawing.Size(169, 28);
-            // 
-            // 删除书籍信息ToolStripMenuItem
-            // 
-            this.删除书籍信息ToolStripMenuItem.Name = "删除书籍信息ToolStripMenuItem";
-            this.删除书籍信息ToolStripMenuItem.Size = new System.Drawing.Size(168, 24);
-            this.删除书籍信息ToolStripMenuItem.Text = "删除书籍信息";
             // 
             // bookLocationInput
             // 
@@ -541,6 +543,50 @@ namespace library
             this.label10.TabIndex = 1;
             this.label10.Text = "书籍名：";
             // 
+            // tabPage3
+            // 
+            this.tabPage3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabPage3.BackgroundImage")));
+            this.tabPage3.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(886, 594);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "书籍借阅情况";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabPage4.BackgroundImage")));
+            this.tabPage4.Controls.Add(this.button3);
+            this.tabPage4.Controls.Add(this.studentPasswardInput);
+            this.tabPage4.Controls.Add(this.studentIdInput);
+            this.tabPage4.Controls.Add(this.label6);
+            this.tabPage4.Controls.Add(this.label3);
+            this.tabPage4.Location = new System.Drawing.Point(4, 25);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(886, 594);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "修改学生密码";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabPage5.BackgroundImage")));
+            this.tabPage5.Controls.Add(this.newAdminPasswardInput);
+            this.tabPage5.Controls.Add(this.oldAdminPasswardInput);
+            this.tabPage5.Controls.Add(this.button4);
+            this.tabPage5.Controls.Add(this.label9);
+            this.tabPage5.Controls.Add(this.label7);
+            this.tabPage5.Location = new System.Drawing.Point(4, 25);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(886, 594);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "修改管理员密码";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
             // adminUsername
             // 
             this.adminUsername.AutoSize = true;
@@ -549,6 +595,95 @@ namespace library
             this.adminUsername.Size = new System.Drawing.Size(63, 15);
             this.adminUsername.TabIndex = 7;
             this.adminUsername.Text = "label14";
+            // 
+            // menuForAdmin
+            // 
+            this.menuForAdmin.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuForAdmin.Name = "menuForAdmin";
+            this.menuForAdmin.Size = new System.Drawing.Size(61, 4);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(53, 51);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(82, 15);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "学生账号：";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(53, 104);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(82, 15);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "学生密码：";
+            // 
+            // studentIdInput
+            // 
+            this.studentIdInput.Location = new System.Drawing.Point(141, 48);
+            this.studentIdInput.Name = "studentIdInput";
+            this.studentIdInput.Size = new System.Drawing.Size(187, 25);
+            this.studentIdInput.TabIndex = 2;
+            // 
+            // studentPasswardInput
+            // 
+            this.studentPasswardInput.Location = new System.Drawing.Point(141, 101);
+            this.studentPasswardInput.Name = "studentPasswardInput";
+            this.studentPasswardInput.Size = new System.Drawing.Size(187, 25);
+            this.studentPasswardInput.TabIndex = 3;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(60, 183);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(97, 40);
+            this.button3.TabIndex = 4;
+            this.button3.Text = "修改密码";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.Button3_Click_1);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(59, 66);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(67, 15);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "原密码：";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(59, 118);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(67, 15);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "新密码：";
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(62, 186);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(106, 48);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "修改密码";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // oldAdminPasswardInput
+            // 
+            this.oldAdminPasswardInput.Location = new System.Drawing.Point(132, 63);
+            this.oldAdminPasswardInput.Name = "oldAdminPasswardInput";
+            this.oldAdminPasswardInput.Size = new System.Drawing.Size(200, 25);
+            this.oldAdminPasswardInput.TabIndex = 4;
+            // 
+            // newAdminPasswardInput
+            // 
+            this.newAdminPasswardInput.Location = new System.Drawing.Point(132, 115);
+            this.newAdminPasswardInput.Name = "newAdminPasswardInput";
+            this.newAdminPasswardInput.Size = new System.Drawing.Size(200, 25);
+            this.newAdminPasswardInput.TabIndex = 5;
             // 
             // AdministratorForm
             // 
@@ -564,10 +699,13 @@ namespace library
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewForAdmin)).EndInit();
-            this.menuForAdmin.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewForAdminSearchBook)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -614,7 +752,13 @@ namespace library
         private System.Windows.Forms.TextBox bookAuthorInput;
         private System.Windows.Forms.TextBox bookNameInput;
         private System.Windows.Forms.TextBox bookIdInput;
-        private System.Windows.Forms.DataGridView dataGridViewForAdmin;
+        //private DataGridViewTextBoxColumn admin_search_book_id;
+        //private DataGridViewTextBoxColumn admin_search_book_name;
+        //private DataGridViewTextBoxColumn admin_search_book_author;
+        //private DataGridViewTextBoxColumn admin_search_book_type;
+        //private DataGridViewTextBoxColumn admin_search_book_location;
+        //private DataGridViewTextBoxColumn admin_search_book_number;
+        //private DataGridViewTextBoxColumn admin_search_book_borrow_number;
         private DataGridViewTextBoxColumn admin_search_book_id;
         private DataGridViewTextBoxColumn admin_search_book_name;
         private DataGridViewTextBoxColumn admin_search_book_author;
@@ -622,14 +766,27 @@ namespace library
         private DataGridViewTextBoxColumn admin_search_book_location;
         private DataGridViewTextBoxColumn admin_search_book_number;
         private DataGridViewTextBoxColumn admin_search_book_borrow_number;
+        private DataGridView dataGridViewForAdminSearchBook;
+        private TabPage tabPage3;
+        private TabPage tabPage4;
+        private TabPage tabPage5;
+        private ContextMenuStrip menuForAdmin;
         private DataGridViewTextBoxColumn book_id;
         private DataGridViewTextBoxColumn book_name;
         private DataGridViewTextBoxColumn book_author;
         private DataGridViewTextBoxColumn book_type;
         private DataGridViewTextBoxColumn book_location;
-        private DataGridViewTextBoxColumn book_left_number;
         private DataGridViewTextBoxColumn book_number;
-        private ContextMenuStrip menuForAdmin;
-        private ToolStripMenuItem 删除书籍信息ToolStripMenuItem;
+        private DataGridViewTextBoxColumn book_left_number;
+        private Button button3;
+        private TextBox studentPasswardInput;
+        private TextBox studentIdInput;
+        private Label label6;
+        private Label label3;
+        private TextBox newAdminPasswardInput;
+        private TextBox oldAdminPasswardInput;
+        private Button button4;
+        private Label label9;
+        private Label label7;
     }
 }

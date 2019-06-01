@@ -116,6 +116,7 @@ namespace library
             // 
             this.dataGridViewUserSearchBookResult.AllowUserToAddRows = false;
             this.dataGridViewUserSearchBookResult.AllowUserToOrderColumns = true;
+            this.dataGridViewUserSearchBookResult.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewUserSearchBookResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewUserSearchBookResult.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.book_id,
@@ -125,12 +126,12 @@ namespace library
             this.book_location,
             this.book_number});
             this.dataGridViewUserSearchBookResult.ContextMenuStrip = this.menuForUserSearchedBooks;
-            this.dataGridViewUserSearchBookResult.Location = new System.Drawing.Point(34, 70);
+            this.dataGridViewUserSearchBookResult.Location = new System.Drawing.Point(-4, 70);
             this.dataGridViewUserSearchBookResult.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridViewUserSearchBookResult.Name = "dataGridViewUserSearchBookResult";
             this.dataGridViewUserSearchBookResult.ReadOnly = true;
             this.dataGridViewUserSearchBookResult.RowTemplate.Height = 27;
-            this.dataGridViewUserSearchBookResult.Size = new System.Drawing.Size(734, 431);
+            this.dataGridViewUserSearchBookResult.Size = new System.Drawing.Size(799, 441);
             this.dataGridViewUserSearchBookResult.TabIndex = 18;
             this.dataGridViewUserSearchBookResult.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DataGridViewUserSearchBookResult_CellMouseDown);
             // 
@@ -279,18 +280,19 @@ namespace library
             // 
             this.dataGridViewBookBorrowed.AllowUserToAddRows = false;
             this.dataGridViewBookBorrowed.AllowUserToOrderColumns = true;
+            this.dataGridViewBookBorrowed.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewBookBorrowed.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewBookBorrowed.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.borrow_record_id,
             this.book_name_Borrowed,
             this.borrowedDatetime});
             this.dataGridViewBookBorrowed.ContextMenuStrip = this.menuForBorrowBook;
-            this.dataGridViewBookBorrowed.Location = new System.Drawing.Point(34, 70);
+            this.dataGridViewBookBorrowed.Location = new System.Drawing.Point(-4, 70);
             this.dataGridViewBookBorrowed.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridViewBookBorrowed.Name = "dataGridViewBookBorrowed";
             this.dataGridViewBookBorrowed.ReadOnly = true;
             this.dataGridViewBookBorrowed.RowTemplate.Height = 27;
-            this.dataGridViewBookBorrowed.Size = new System.Drawing.Size(745, 429);
+            this.dataGridViewBookBorrowed.Size = new System.Drawing.Size(806, 444);
             this.dataGridViewBookBorrowed.TabIndex = 18;
             this.dataGridViewBookBorrowed.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DataGridViewUserBorrowBookResult_CellMouseDown);
             // 
@@ -440,7 +442,7 @@ namespace library
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(828, 625);
+            this.ClientSize = new System.Drawing.Size(796, 567);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.studentUsername);
