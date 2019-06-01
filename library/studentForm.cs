@@ -16,6 +16,7 @@ namespace library
     {
         string username = "";
         int id ;
+        int row;
         public StudentForm(int user_id, string yhm)
         {
             
@@ -96,14 +97,41 @@ namespace library
                 {
                     dataGridViewUserSearchBookResult.ClearSelection();
                     dataGridViewUserSearchBookResult.Rows[e.RowIndex].Selected = true;
+                    row = e.RowIndex;
                 }
                 menuForUserSearchedBooks.Show(MousePosition.X, MousePosition.Y);
             }
         }
-
+        //在右键点击时，将当前行选中
+        private void DataGridViewUserBorrowBookResult_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == System.Windows.Forms.MouseButtons.Right && e.RowIndex >= 0)
+            {
+                if (!dataGridViewBookBorrowed.Rows[e.RowIndex].Selected)
+                {
+                    dataGridViewBookBorrowed.ClearSelection();
+                    dataGridViewBookBorrowed.Rows[e.RowIndex].Selected = true;
+                }
+                menuForUserSearchedBooks.Show(MousePosition.X, MousePosition.Y);
+            }
+        }
         private void 借阅书籍ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            SqlConnect c = new SqlConnect();
+            String sql;
+            String searchBookId = dataGridViewUserSearchBookResult.Rows[row].Cells[0].Value.ToString();
+            if (c.IsSerchResult(c.ExcuteOrder("select * from borrowRecord where book_id = '"+ searchBookId + "' AND student_id = '"+id+"' AND status_borrow = 'jcwh'", c.myCon)) > 0)
+                MessageBox.Show("你已借阅该书籍，无法重复借阅");
+            else
+            {
+                sql = "INSERT INTO borrowRecord (book_id,student_id,status_borrow) VALUES ('" + searchBookId + "','" + id + "','jcwh')";
+                MySqlCommand m = c.ExcuteOrder("INSERT INTO borrowRecord (book_id,student_id,status_borrow) VALUES ('" + searchBookId + "','" + id + "','jcwh')", c.myCon);
+                c.GetDelInsertUpdateResult(m);
+                Console.WriteLine(sql);
+                MessageBox.Show("借阅成功！");
+            }
+            Console.WriteLine(dataGridViewUserSearchBookResult.Rows[row].Cells[0].Value.ToString());
+            c.CloseMySqlConnection();
         }
 
         private void StudentUsername_Click(object sender, EventArgs e)
@@ -111,7 +139,7 @@ namespace library
 
         }
 
-        private void 刷新_Click(object sender, EventArgs e)
+        private void 查询_Click(object sender, EventArgs e)
         {
             dataGridViewBookBorrowed.Rows.Clear();
 
@@ -150,6 +178,11 @@ namespace library
             }
             else
                 MessageBox.Show("密码输入错误！");
+        }
+
+        private void 归还书籍ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
