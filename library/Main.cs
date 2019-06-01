@@ -14,7 +14,7 @@ namespace library
     {
         private Login anotherForm2;
         private Form3 anotherForm3;
-        private SearchBook anotherForm1_1;
+        private GuestSearchBook anotherForm1_1;
         public Main()
         {
             InitializeComponent();
@@ -60,7 +60,7 @@ namespace library
 
         private void Button3_Click(object sender, EventArgs e)
         {
-            anotherForm1_1 = new SearchBook();
+            anotherForm1_1 = new GuestSearchBook();
             this.Hide();
             anotherForm1_1.ShowDialog();
             Application.ExitThread();

@@ -35,13 +35,13 @@ namespace library
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridViewForAdminSearchBook = new System.Windows.Forms.DataGridView();
-            this.book_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.book_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.book_author = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.book_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.book_location = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.book_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.book_left_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.admin_search_book_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.admin_search_book_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.admin_search_book_author = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.admin_search_book_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.admin_search_book_location = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.admin_search_book_borrow_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.admin_search_book_left_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bookLocationInput = new System.Windows.Forms.TextBox();
             this.bookTypeInput = new System.Windows.Forms.TextBox();
             this.bookAuthorInput = new System.Windows.Forms.TextBox();
@@ -54,6 +54,7 @@ namespace library
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button7 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.updateBookNumberInput = new System.Windows.Forms.TextBox();
             this.updateBookLocationInput = new System.Windows.Forms.TextBox();
@@ -103,7 +104,6 @@ namespace library
             this.label7 = new System.Windows.Forms.Label();
             this.adminUsername = new System.Windows.Forms.Label();
             this.menuForAdmin = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.button7 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewForAdminSearchBook)).BeginInit();
@@ -117,7 +117,7 @@ namespace library
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 18);
+            this.label1.Location = new System.Drawing.Point(530, 18);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 12);
@@ -132,7 +132,7 @@ namespace library
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Location = new System.Drawing.Point(-2, 50);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(670, 498);
@@ -155,9 +155,9 @@ namespace library
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage1.Size = new System.Drawing.Size(662, 472);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "查找书籍";
@@ -170,15 +170,15 @@ namespace library
             this.dataGridViewForAdminSearchBook.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewForAdminSearchBook.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewForAdminSearchBook.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.book_id,
-            this.book_name,
-            this.book_author,
-            this.book_type,
-            this.book_location,
-            this.book_number,
-            this.book_left_number});
+            this.admin_search_book_id,
+            this.admin_search_book_name,
+            this.admin_search_book_author,
+            this.admin_search_book_type,
+            this.admin_search_book_location,
+            this.admin_search_book_borrow_number,
+            this.admin_search_book_left_number});
             this.dataGridViewForAdminSearchBook.Location = new System.Drawing.Point(2, 82);
-            this.dataGridViewForAdminSearchBook.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridViewForAdminSearchBook.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewForAdminSearchBook.Name = "dataGridViewForAdminSearchBook";
             this.dataGridViewForAdminSearchBook.ReadOnly = true;
             this.dataGridViewForAdminSearchBook.RowTemplate.Height = 27;
@@ -186,60 +186,60 @@ namespace library
             this.dataGridViewForAdminSearchBook.TabIndex = 18;
             this.dataGridViewForAdminSearchBook.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DataGridViewUserSearchBookResult_CellMouseDown);
             // 
-            // book_id
+            // admin_search_book_id
             // 
-            this.book_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.book_id.HeaderText = "书籍编号";
-            this.book_id.Name = "book_id";
-            this.book_id.ReadOnly = true;
-            this.book_id.Width = 61;
+            this.admin_search_book_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.admin_search_book_id.HeaderText = "书籍编号";
+            this.admin_search_book_id.Name = "admin_search_book_id";
+            this.admin_search_book_id.ReadOnly = true;
+            this.admin_search_book_id.Width = 61;
             // 
-            // book_name
+            // admin_search_book_name
             // 
-            this.book_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.book_name.HeaderText = "书名";
-            this.book_name.Name = "book_name";
-            this.book_name.ReadOnly = true;
-            this.book_name.Width = 51;
+            this.admin_search_book_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.admin_search_book_name.HeaderText = "书名";
+            this.admin_search_book_name.Name = "admin_search_book_name";
+            this.admin_search_book_name.ReadOnly = true;
+            this.admin_search_book_name.Width = 51;
             // 
-            // book_author
+            // admin_search_book_author
             // 
-            this.book_author.HeaderText = "书籍作者";
-            this.book_author.Name = "book_author";
-            this.book_author.ReadOnly = true;
+            this.admin_search_book_author.HeaderText = "书籍作者";
+            this.admin_search_book_author.Name = "admin_search_book_author";
+            this.admin_search_book_author.ReadOnly = true;
             // 
-            // book_type
+            // admin_search_book_type
             // 
-            this.book_type.HeaderText = "书籍类型";
-            this.book_type.Name = "book_type";
-            this.book_type.ReadOnly = true;
+            this.admin_search_book_type.HeaderText = "书籍类型";
+            this.admin_search_book_type.Name = "admin_search_book_type";
+            this.admin_search_book_type.ReadOnly = true;
             // 
-            // book_location
+            // admin_search_book_location
             // 
-            this.book_location.HeaderText = "书籍位置";
-            this.book_location.Name = "book_location";
-            this.book_location.ReadOnly = true;
+            this.admin_search_book_location.HeaderText = "书籍位置";
+            this.admin_search_book_location.Name = "admin_search_book_location";
+            this.admin_search_book_location.ReadOnly = true;
             // 
-            // book_number
+            // admin_search_book_borrow_number
             // 
-            this.book_number.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.book_number.HeaderText = "书籍总数";
-            this.book_number.Name = "book_number";
-            this.book_number.ReadOnly = true;
-            this.book_number.Width = 61;
+            this.admin_search_book_borrow_number.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.admin_search_book_borrow_number.HeaderText = "书籍总数";
+            this.admin_search_book_borrow_number.Name = "admin_search_book_borrow_number";
+            this.admin_search_book_borrow_number.ReadOnly = true;
+            this.admin_search_book_borrow_number.Width = 61;
             // 
-            // book_left_number
+            // admin_search_book_left_number
             // 
-            this.book_left_number.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.book_left_number.HeaderText = "剩余可借数量";
-            this.book_left_number.Name = "book_left_number";
-            this.book_left_number.ReadOnly = true;
-            this.book_left_number.Width = 72;
+            this.admin_search_book_left_number.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.admin_search_book_left_number.HeaderText = "剩余可借数量";
+            this.admin_search_book_left_number.Name = "admin_search_book_left_number";
+            this.admin_search_book_left_number.ReadOnly = true;
+            this.admin_search_book_left_number.Width = 72;
             // 
             // bookLocationInput
             // 
             this.bookLocationInput.Location = new System.Drawing.Point(338, 31);
-            this.bookLocationInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bookLocationInput.Margin = new System.Windows.Forms.Padding(2);
             this.bookLocationInput.Name = "bookLocationInput";
             this.bookLocationInput.Size = new System.Drawing.Size(140, 21);
             this.bookLocationInput.TabIndex = 25;
@@ -247,7 +247,7 @@ namespace library
             // bookTypeInput
             // 
             this.bookTypeInput.Location = new System.Drawing.Point(338, 3);
-            this.bookTypeInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bookTypeInput.Margin = new System.Windows.Forms.Padding(2);
             this.bookTypeInput.Name = "bookTypeInput";
             this.bookTypeInput.Size = new System.Drawing.Size(140, 21);
             this.bookTypeInput.TabIndex = 24;
@@ -255,7 +255,7 @@ namespace library
             // bookAuthorInput
             // 
             this.bookAuthorInput.Location = new System.Drawing.Point(88, 58);
-            this.bookAuthorInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bookAuthorInput.Margin = new System.Windows.Forms.Padding(2);
             this.bookAuthorInput.Name = "bookAuthorInput";
             this.bookAuthorInput.Size = new System.Drawing.Size(140, 21);
             this.bookAuthorInput.TabIndex = 22;
@@ -263,7 +263,7 @@ namespace library
             // bookNameInput
             // 
             this.bookNameInput.Location = new System.Drawing.Point(88, 31);
-            this.bookNameInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bookNameInput.Margin = new System.Windows.Forms.Padding(2);
             this.bookNameInput.Name = "bookNameInput";
             this.bookNameInput.Size = new System.Drawing.Size(140, 21);
             this.bookNameInput.TabIndex = 21;
@@ -271,7 +271,7 @@ namespace library
             // bookIdInput
             // 
             this.bookIdInput.Location = new System.Drawing.Point(88, 3);
-            this.bookIdInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bookIdInput.Margin = new System.Windows.Forms.Padding(2);
             this.bookIdInput.Name = "bookIdInput";
             this.bookIdInput.Size = new System.Drawing.Size(140, 21);
             this.bookIdInput.TabIndex = 20;
@@ -289,7 +289,7 @@ namespace library
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(522, 7);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(108, 67);
             this.button1.TabIndex = 15;
@@ -366,18 +366,27 @@ namespace library
             this.tabPage2.Controls.Add(this.label11);
             this.tabPage2.Controls.Add(this.label10);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage2.Size = new System.Drawing.Size(662, 472);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "添加/更改书籍信息";
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(576, 55);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(75, 23);
+            this.button7.TabIndex = 26;
+            this.button7.Text = "button7";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
             // button5
             // 
             this.button5.Location = new System.Drawing.Point(395, 250);
-            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(71, 29);
             this.button5.TabIndex = 25;
@@ -388,7 +397,7 @@ namespace library
             // updateBookNumberInput
             // 
             this.updateBookNumberInput.Location = new System.Drawing.Point(411, 201);
-            this.updateBookNumberInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.updateBookNumberInput.Margin = new System.Windows.Forms.Padding(2);
             this.updateBookNumberInput.Name = "updateBookNumberInput";
             this.updateBookNumberInput.Size = new System.Drawing.Size(120, 21);
             this.updateBookNumberInput.TabIndex = 24;
@@ -396,7 +405,7 @@ namespace library
             // updateBookLocationInput
             // 
             this.updateBookLocationInput.Location = new System.Drawing.Point(411, 172);
-            this.updateBookLocationInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.updateBookLocationInput.Margin = new System.Windows.Forms.Padding(2);
             this.updateBookLocationInput.Name = "updateBookLocationInput";
             this.updateBookLocationInput.Size = new System.Drawing.Size(120, 21);
             this.updateBookLocationInput.TabIndex = 23;
@@ -404,7 +413,7 @@ namespace library
             // updateBookAuthorInput
             // 
             this.updateBookAuthorInput.Location = new System.Drawing.Point(411, 143);
-            this.updateBookAuthorInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.updateBookAuthorInput.Margin = new System.Windows.Forms.Padding(2);
             this.updateBookAuthorInput.Name = "updateBookAuthorInput";
             this.updateBookAuthorInput.Size = new System.Drawing.Size(120, 21);
             this.updateBookAuthorInput.TabIndex = 22;
@@ -412,7 +421,7 @@ namespace library
             // updateBookTypeInput
             // 
             this.updateBookTypeInput.Location = new System.Drawing.Point(411, 114);
-            this.updateBookTypeInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.updateBookTypeInput.Margin = new System.Windows.Forms.Padding(2);
             this.updateBookTypeInput.Name = "updateBookTypeInput";
             this.updateBookTypeInput.Size = new System.Drawing.Size(120, 21);
             this.updateBookTypeInput.TabIndex = 21;
@@ -420,7 +429,7 @@ namespace library
             // updateBookNameInput
             // 
             this.updateBookNameInput.Location = new System.Drawing.Point(411, 85);
-            this.updateBookNameInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.updateBookNameInput.Margin = new System.Windows.Forms.Padding(2);
             this.updateBookNameInput.Name = "updateBookNameInput";
             this.updateBookNameInput.Size = new System.Drawing.Size(120, 21);
             this.updateBookNameInput.TabIndex = 20;
@@ -428,7 +437,7 @@ namespace library
             // updateBookIdIput
             // 
             this.updateBookIdIput.Location = new System.Drawing.Point(411, 56);
-            this.updateBookIdIput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.updateBookIdIput.Margin = new System.Windows.Forms.Padding(2);
             this.updateBookIdIput.Name = "updateBookIdIput";
             this.updateBookIdIput.Size = new System.Drawing.Size(120, 21);
             this.updateBookIdIput.TabIndex = 19;
@@ -506,7 +515,7 @@ namespace library
             // insertBookAuthorInput
             // 
             this.insertBookAuthorInput.Location = new System.Drawing.Point(105, 115);
-            this.insertBookAuthorInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.insertBookAuthorInput.Margin = new System.Windows.Forms.Padding(2);
             this.insertBookAuthorInput.Name = "insertBookAuthorInput";
             this.insertBookAuthorInput.Size = new System.Drawing.Size(136, 21);
             this.insertBookAuthorInput.TabIndex = 11;
@@ -514,7 +523,7 @@ namespace library
             // insertBookNumberInput
             // 
             this.insertBookNumberInput.Location = new System.Drawing.Point(105, 175);
-            this.insertBookNumberInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.insertBookNumberInput.Margin = new System.Windows.Forms.Padding(2);
             this.insertBookNumberInput.Name = "insertBookNumberInput";
             this.insertBookNumberInput.Size = new System.Drawing.Size(136, 21);
             this.insertBookNumberInput.TabIndex = 10;
@@ -532,7 +541,7 @@ namespace library
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(42, 207);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(71, 29);
             this.button2.TabIndex = 8;
@@ -543,7 +552,7 @@ namespace library
             // insertBookLocationInput
             // 
             this.insertBookLocationInput.Location = new System.Drawing.Point(105, 145);
-            this.insertBookLocationInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.insertBookLocationInput.Margin = new System.Windows.Forms.Padding(2);
             this.insertBookLocationInput.Name = "insertBookLocationInput";
             this.insertBookLocationInput.Size = new System.Drawing.Size(136, 21);
             this.insertBookLocationInput.TabIndex = 7;
@@ -551,7 +560,7 @@ namespace library
             // insertBookTypeInput
             // 
             this.insertBookTypeInput.Location = new System.Drawing.Point(105, 85);
-            this.insertBookTypeInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.insertBookTypeInput.Margin = new System.Windows.Forms.Padding(2);
             this.insertBookTypeInput.Name = "insertBookTypeInput";
             this.insertBookTypeInput.Size = new System.Drawing.Size(136, 21);
             this.insertBookTypeInput.TabIndex = 6;
@@ -559,7 +568,7 @@ namespace library
             // insertBookNameInput
             // 
             this.insertBookNameInput.Location = new System.Drawing.Point(105, 55);
-            this.insertBookNameInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.insertBookNameInput.Margin = new System.Windows.Forms.Padding(2);
             this.insertBookNameInput.Name = "insertBookNameInput";
             this.insertBookNameInput.Size = new System.Drawing.Size(136, 21);
             this.insertBookNameInput.TabIndex = 5;
@@ -605,9 +614,9 @@ namespace library
             this.tabPage3.Controls.Add(this.label23);
             this.tabPage3.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage3.Size = new System.Drawing.Size(662, 472);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "书籍借阅情况";
@@ -624,7 +633,7 @@ namespace library
             this.admin_search_borrow_student_username,
             this.admin_search_borrow_time1});
             this.dataGridViewForAdminSearchBorrow.Location = new System.Drawing.Point(2, 82);
-            this.dataGridViewForAdminSearchBorrow.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridViewForAdminSearchBorrow.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewForAdminSearchBorrow.Name = "dataGridViewForAdminSearchBorrow";
             this.dataGridViewForAdminSearchBorrow.ReadOnly = true;
             this.dataGridViewForAdminSearchBorrow.RowTemplate.Height = 27;
@@ -659,7 +668,7 @@ namespace library
             // 
             this.button6.ForeColor = System.Drawing.SystemColors.ControlText;
             this.button6.Location = new System.Drawing.Point(552, 22);
-            this.button6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button6.Margin = new System.Windows.Forms.Padding(2);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(61, 30);
             this.button6.TabIndex = 6;
@@ -681,7 +690,7 @@ namespace library
             // borrowRecordBookNameInput
             // 
             this.borrowRecordBookNameInput.Location = new System.Drawing.Point(84, 27);
-            this.borrowRecordBookNameInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.borrowRecordBookNameInput.Margin = new System.Windows.Forms.Padding(2);
             this.borrowRecordBookNameInput.Name = "borrowRecordBookNameInput";
             this.borrowRecordBookNameInput.Size = new System.Drawing.Size(154, 21);
             this.borrowRecordBookNameInput.TabIndex = 4;
@@ -689,7 +698,7 @@ namespace library
             // borrowRecordStudentUsernameInput
             // 
             this.borrowRecordStudentUsernameInput.Location = new System.Drawing.Point(346, 27);
-            this.borrowRecordStudentUsernameInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.borrowRecordStudentUsernameInput.Margin = new System.Windows.Forms.Padding(2);
             this.borrowRecordStudentUsernameInput.Name = "borrowRecordStudentUsernameInput";
             this.borrowRecordStudentUsernameInput.Size = new System.Drawing.Size(154, 21);
             this.borrowRecordStudentUsernameInput.TabIndex = 3;
@@ -714,9 +723,9 @@ namespace library
             this.tabPage4.Controls.Add(this.label6);
             this.tabPage4.Controls.Add(this.label3);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage4.Size = new System.Drawing.Size(662, 472);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "修改学生密码";
@@ -724,7 +733,7 @@ namespace library
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(106, 146);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(73, 32);
             this.button3.TabIndex = 4;
@@ -735,7 +744,7 @@ namespace library
             // studentPasswardInput
             // 
             this.studentPasswardInput.Location = new System.Drawing.Point(106, 81);
-            this.studentPasswardInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.studentPasswardInput.Margin = new System.Windows.Forms.Padding(2);
             this.studentPasswardInput.Name = "studentPasswardInput";
             this.studentPasswardInput.PasswordChar = '*';
             this.studentPasswardInput.Size = new System.Drawing.Size(141, 21);
@@ -744,7 +753,7 @@ namespace library
             // studentIdInput
             // 
             this.studentIdInput.Location = new System.Drawing.Point(106, 38);
-            this.studentIdInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.studentIdInput.Margin = new System.Windows.Forms.Padding(2);
             this.studentIdInput.Name = "studentIdInput";
             this.studentIdInput.Size = new System.Drawing.Size(141, 21);
             this.studentIdInput.TabIndex = 2;
@@ -778,9 +787,9 @@ namespace library
             this.tabPage5.Controls.Add(this.label9);
             this.tabPage5.Controls.Add(this.label7);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
-            this.tabPage5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage5.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage5.Size = new System.Drawing.Size(662, 472);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "修改管理员密码";
@@ -789,7 +798,7 @@ namespace library
             // newAdminPasswardInput
             // 
             this.newAdminPasswardInput.Location = new System.Drawing.Point(99, 92);
-            this.newAdminPasswardInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.newAdminPasswardInput.Margin = new System.Windows.Forms.Padding(2);
             this.newAdminPasswardInput.Name = "newAdminPasswardInput";
             this.newAdminPasswardInput.PasswordChar = '*';
             this.newAdminPasswardInput.Size = new System.Drawing.Size(151, 21);
@@ -798,7 +807,7 @@ namespace library
             // oldAdminPasswardInput
             // 
             this.oldAdminPasswardInput.Location = new System.Drawing.Point(99, 50);
-            this.oldAdminPasswardInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.oldAdminPasswardInput.Margin = new System.Windows.Forms.Padding(2);
             this.oldAdminPasswardInput.Name = "oldAdminPasswardInput";
             this.oldAdminPasswardInput.PasswordChar = '*';
             this.oldAdminPasswardInput.Size = new System.Drawing.Size(151, 21);
@@ -807,7 +816,7 @@ namespace library
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(99, 149);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(80, 38);
             this.button4.TabIndex = 3;
@@ -838,7 +847,7 @@ namespace library
             // adminUsername
             // 
             this.adminUsername.AutoSize = true;
-            this.adminUsername.Location = new System.Drawing.Point(71, 18);
+            this.adminUsername.Location = new System.Drawing.Point(585, 18);
             this.adminUsername.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.adminUsername.Name = "adminUsername";
             this.adminUsername.Size = new System.Drawing.Size(47, 12);
@@ -851,15 +860,6 @@ namespace library
             this.menuForAdmin.Name = "menuForAdmin";
             this.menuForAdmin.Size = new System.Drawing.Size(61, 4);
             // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(576, 55);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
-            this.button7.TabIndex = 26;
-            this.button7.Text = "button7";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
             // AdministratorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -869,9 +869,10 @@ namespace library
             this.Controls.Add(this.adminUsername);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AdministratorForm";
             this.Text = "管理员界面";
+            this.Load += new System.EventHandler(this.AdministratorForm_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -964,13 +965,6 @@ namespace library
         private DataGridViewTextBoxColumn admin_search_book_location;
         private DataGridViewTextBoxColumn admin_search_book_borrow_number;
         private DataGridViewTextBoxColumn admin_search_book_left_number;
-        private DataGridViewTextBoxColumn book_id;
-        private DataGridViewTextBoxColumn book_name;
-        private DataGridViewTextBoxColumn book_author;
-        private DataGridViewTextBoxColumn book_type;
-        private DataGridViewTextBoxColumn book_location;
-        private DataGridViewTextBoxColumn book_number;
-        private DataGridViewTextBoxColumn book_left_number;
         private Button button7;
     }
 }

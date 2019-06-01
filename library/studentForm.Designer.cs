@@ -86,7 +86,7 @@ namespace library
             this.修改密码.Controls.Add(this.tabPage2);
             this.修改密码.Controls.Add(this.tabPage3);
             this.修改密码.Location = new System.Drawing.Point(-4, 18);
-            this.修改密码.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.修改密码.Margin = new System.Windows.Forms.Padding(2);
             this.修改密码.Name = "修改密码";
             this.修改密码.SelectedIndex = 0;
             this.修改密码.Size = new System.Drawing.Size(604, 436);
@@ -104,9 +104,9 @@ namespace library
             this.tabPage1.Controls.Add(this.searchBookButton);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage1.Size = new System.Drawing.Size(596, 410);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "查找书籍";
@@ -127,7 +127,7 @@ namespace library
             this.book_number});
             this.dataGridViewUserSearchBookResult.ContextMenuStrip = this.menuForUserSearchedBooks;
             this.dataGridViewUserSearchBookResult.Location = new System.Drawing.Point(-3, 56);
-            this.dataGridViewUserSearchBookResult.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridViewUserSearchBookResult.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewUserSearchBookResult.Name = "dataGridViewUserSearchBookResult";
             this.dataGridViewUserSearchBookResult.ReadOnly = true;
             this.dataGridViewUserSearchBookResult.RowTemplate.Height = 27;
@@ -196,7 +196,7 @@ namespace library
             // bookTypeInput
             // 
             this.bookTypeInput.Location = new System.Drawing.Point(341, 6);
-            this.bookTypeInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bookTypeInput.Margin = new System.Windows.Forms.Padding(2);
             this.bookTypeInput.Name = "bookTypeInput";
             this.bookTypeInput.Size = new System.Drawing.Size(103, 21);
             this.bookTypeInput.TabIndex = 20;
@@ -204,7 +204,7 @@ namespace library
             // bookAuthorInput
             // 
             this.bookAuthorInput.Location = new System.Drawing.Point(97, 32);
-            this.bookAuthorInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bookAuthorInput.Margin = new System.Windows.Forms.Padding(2);
             this.bookAuthorInput.Name = "bookAuthorInput";
             this.bookAuthorInput.Size = new System.Drawing.Size(113, 21);
             this.bookAuthorInput.TabIndex = 19;
@@ -213,7 +213,7 @@ namespace library
             // bookNameInput
             // 
             this.bookNameInput.Location = new System.Drawing.Point(97, 6);
-            this.bookNameInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bookNameInput.Margin = new System.Windows.Forms.Padding(2);
             this.bookNameInput.Name = "bookNameInput";
             this.bookNameInput.Size = new System.Drawing.Size(113, 21);
             this.bookNameInput.TabIndex = 18;
@@ -241,7 +241,7 @@ namespace library
             // searchBookButton
             // 
             this.searchBookButton.Location = new System.Drawing.Point(471, 6);
-            this.searchBookButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchBookButton.Margin = new System.Windows.Forms.Padding(2);
             this.searchBookButton.Name = "searchBookButton";
             this.searchBookButton.Size = new System.Drawing.Size(100, 46);
             this.searchBookButton.TabIndex = 5;
@@ -266,9 +266,9 @@ namespace library
             this.tabPage2.Controls.Add(this.查询);
             this.tabPage2.Controls.Add(this.dataGridViewBookBorrowed);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage2.Size = new System.Drawing.Size(596, 410);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "已借阅书籍";
@@ -276,7 +276,7 @@ namespace library
             // 查询
             // 
             this.查询.Location = new System.Drawing.Point(26, 14);
-            this.查询.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.查询.Margin = new System.Windows.Forms.Padding(2);
             this.查询.Name = "查询";
             this.查询.Size = new System.Drawing.Size(56, 24);
             this.查询.TabIndex = 19;
@@ -296,7 +296,7 @@ namespace library
             this.borrowedDatetime});
             this.dataGridViewBookBorrowed.ContextMenuStrip = this.menuForBorrowBook;
             this.dataGridViewBookBorrowed.Location = new System.Drawing.Point(-3, 56);
-            this.dataGridViewBookBorrowed.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridViewBookBorrowed.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewBookBorrowed.Name = "dataGridViewBookBorrowed";
             this.dataGridViewBookBorrowed.ReadOnly = true;
             this.dataGridViewBookBorrowed.RowTemplate.Height = 27;
@@ -347,9 +347,9 @@ namespace library
             this.tabPage3.Controls.Add(this.label10);
             this.tabPage3.Controls.Add(this.label9);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage3.Size = new System.Drawing.Size(596, 410);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "修改密码";
@@ -357,7 +357,7 @@ namespace library
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(134, 143);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(76, 31);
             this.button2.TabIndex = 4;
@@ -368,7 +368,7 @@ namespace library
             // newPasswardInput
             // 
             this.newPasswardInput.Location = new System.Drawing.Point(134, 91);
-            this.newPasswardInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.newPasswardInput.Margin = new System.Windows.Forms.Padding(2);
             this.newPasswardInput.Name = "newPasswardInput";
             this.newPasswardInput.PasswordChar = '*';
             this.newPasswardInput.Size = new System.Drawing.Size(152, 21);
@@ -377,7 +377,7 @@ namespace library
             // oldPasswardInput
             // 
             this.oldPasswardInput.Location = new System.Drawing.Point(134, 58);
-            this.oldPasswardInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.oldPasswardInput.Margin = new System.Windows.Forms.Padding(2);
             this.oldPasswardInput.Name = "oldPasswardInput";
             this.oldPasswardInput.Size = new System.Drawing.Size(152, 21);
             this.oldPasswardInput.TabIndex = 2;
@@ -417,7 +417,7 @@ namespace library
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(393, 18);
+            this.label2.Location = new System.Drawing.Point(465, 19);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 12);
@@ -427,7 +427,7 @@ namespace library
             // studentUsername
             // 
             this.studentUsername.AutoSize = true;
-            this.studentUsername.Location = new System.Drawing.Point(458, 18);
+            this.studentUsername.Location = new System.Drawing.Point(530, 19);
             this.studentUsername.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.studentUsername.Name = "studentUsername";
             this.studentUsername.Size = new System.Drawing.Size(47, 12);
@@ -438,7 +438,7 @@ namespace library
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(393, 3);
+            this.label3.Location = new System.Drawing.Point(465, 4);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 12);
@@ -448,7 +448,7 @@ namespace library
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(458, 3);
+            this.label4.Location = new System.Drawing.Point(530, 4);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(41, 12);
@@ -466,7 +466,7 @@ namespace library
             this.Controls.Add(this.studentUsername);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.修改密码);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "StudentForm";
             this.Text = "用户界面";
             this.修改密码.ResumeLayout(false);

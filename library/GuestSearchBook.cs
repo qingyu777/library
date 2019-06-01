@@ -13,10 +13,10 @@ using MySql.Data.MySqlClient;
 
 namespace library
 {
-    public partial class SearchBook : Form
+    public partial class GuestSearchBook : Form
     {
         private Main anotherForm1;
-        public SearchBook()
+        public GuestSearchBook()
         {
             InitializeComponent();
         }

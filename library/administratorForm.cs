@@ -221,5 +221,10 @@ namespace library
         {
 
         }
+
+        private void AdministratorForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
