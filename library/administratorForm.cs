@@ -226,5 +226,24 @@ namespace library
         {
 
         }
+
+        private void Button7_Click(object sender, EventArgs e)
+        {
+            SqlConnect c = new SqlConnect();
+            String sql = "select *,0 from book where book_id = " + updateBookIdIput.Text;
+            MySqlCommand cmd = new MySqlCommand(sql, c.myCon);
+            Book[] bookResult = c.GetBookArraySerchResult(cmd); //c.ExcuteOrder(sql, c.myCon)
+            if (bookResult.Length > 0)
+            {
+                updateBookNameInput.Text = bookResult[0].Book_name;
+                updateBookTypeInput.Text = bookResult[0].Book_type;
+                updateBookAuthorInput.Text = bookResult[0].Book_author;
+                updateBookLocationInput.Text = bookResult[0].Book_location;
+                updateBookNumberInput.Text = bookResult[0].Book_number.ToString();
+            }
+            else
+                MessageBox.Show("没有这本书，不存在此id");
+            c.CloseMySqlConnection();
+        }
     }
 }
