@@ -14,14 +14,23 @@ namespace library
     public partial class AdministratorForm : Form
     {
         String admin_username;
+
         public AdministratorForm(String u)
         {
             admin_username = u;
             InitializeComponent();
             adminUsername.Text = u;
+            InitDropListList();//初始化书籍类别下拉选项
+        }
+
+        public void InitDropListList()
+        {
             SqlConnect c = new SqlConnect();
             String[] bookType = c.GetArraySerchResult(c.ExcuteOrder("select distinct book_type from book", c.myCon));
             int len = bookType.Length;
+            bookTypeInput.Items.Clear();
+            insertBookTypeInput.Items.Clear();
+            updateBookTypeInput.Items.Clear();
             for (int i = 0; i < len; i++)
             {
                 bookTypeInput.Items.Add(bookType[i]);
@@ -118,7 +127,7 @@ namespace library
                     MessageBox.Show("请输入正确的书籍信息格式！");
             }
             c.CloseMySqlConnection();
-
+            InitDropListList(); //可能修改了书籍类别
         }
         
         private void TabPage1_Click(object sender, EventArgs e)
@@ -148,6 +157,7 @@ namespace library
             else
                 MessageBox.Show("不存在该书籍id！");
             c.CloseMySqlConnection();
+            InitDropListList(); //可能修改了书籍类别
         }
 
         private void 删除书籍信息ToolStripMenuItem_Click(object sender, EventArgs e)

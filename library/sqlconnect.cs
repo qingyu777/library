@@ -33,6 +33,7 @@ namespace library
 
         public MySqlCommand ExcuteOrder(string sql, MySqlConnection myCon)     //执行命令语句sql  
         {
+            Console.WriteLine(sql);
             MySqlCommand myCom = new MySqlCommand(sql, myCon);
             return myCom;
         }
