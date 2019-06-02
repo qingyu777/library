@@ -24,25 +24,21 @@ namespace library
         {
             usernameInput.Text = usernameInput.Text.Replace("'", " ").Trim();   //防止sql注入
             passwardInput.Text = passwardInput.Text.Replace("'", " ").Trim();
+            usernameInput.Text = usernameInput.Text.Replace("#", " ").Trim();   //防止sql注入
+            passwardInput.Text = passwardInput.Text.Replace("#", " ").Trim();
             SqlConnect c = new SqlConnect();
 
             //"select * FROM admin where admin_username = '" + textBox1.Text + "'and admin_passward ='' or 'jjj'='jjj'"
 
-            if (c.IsSerchResult(c.ExcuteOrder("select * FROM admin where admin_username = '" + usernameInput.Text + "'and admin_passward ='" + passwardInput.Text + "'", c.myCon))>0)
+            if (c.IsSerchResult(c.ExcuteOrder("select * FROM admin where admin_username = '" + usernameInput.Text + "'and admin_passward ='" + passwardInput.Text + "'", c.myCon)) > 0)
             {
                 anotherForm4 = new AdministratorForm(usernameInput.Text);
                 this.Hide();
                 anotherForm4.ShowDialog();
                 Application.ExitThread();
             }
-            else if (c.IsSerchResult(c.ExcuteOrder("select * FROM admin where admin_username = '" + usernameInput.Text + "'", c.myCon))>0)
-            {
-                MessageBox.Show("密码错误");
-            }
             else
-            {
-                MessageBox.Show("账号错误");
-            }
+                MessageBox.Show("账号或密码错误");
             c.CloseMySqlConnection();
 
         }
@@ -56,6 +52,8 @@ namespace library
         {
             usernameInput.Text = usernameInput.Text.Replace("'", " ").Trim();   //防止sql注入
             passwardInput.Text = passwardInput.Text.Replace("'", " ").Trim();
+            usernameInput.Text = usernameInput.Text.Replace("#", " ").Trim();   //防止sql注入
+            passwardInput.Text = passwardInput.Text.Replace("#", " ").Trim();
             SqlConnect c = new SqlConnect();
 
             //"select * FROM admin where admin_username = '" + textBox1.Text + "'and admin_passward ='' or 'jjj'='jjj'"
@@ -74,14 +72,8 @@ namespace library
             {
                 MessageBox.Show("sql查询出错");
             }
-            else if (c.IsSerchResult(c.ExcuteOrder("select * FROM student where student_username = '" + usernameInput.Text + "'", c.myCon)) > 0)
-            {
-                MessageBox.Show("密码错误");
-            }
             else
-            {
-                MessageBox.Show("账号错误");
-            }
+                MessageBox.Show("账号或密码错误");
             c.CloseMySqlConnection();
         }
 
