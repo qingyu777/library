@@ -15,10 +15,19 @@ namespace library
 {
     public partial class GuestSearchBook : Form
     {
+
+        
         private Main anotherForm1;
+        
         public GuestSearchBook()
         {
             InitializeComponent();
+            SqlConnect c = new SqlConnect();
+            String[] bookType = c.GetArraySerchResult(c.ExcuteOrder("select distinct book_type from book", c.myCon));
+            int len = bookType.Length;
+            for(int i = 0; i<len; i++)
+                bookTypeInput.Items.Add(bookType[i]);
+            c.CloseMySqlConnection();
         }
 
         private void Button2_Click(object sender, EventArgs e)

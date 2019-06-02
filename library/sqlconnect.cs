@@ -91,6 +91,38 @@ namespace library
             }
         }
 
+        public String[] GetArraySerchResult(MySqlCommand myCom)    //获取查询结果  
+        {
+            String[] result ;
+            try
+            {
+                MySqlDataReader msDr = myCom.ExecuteReader();
+                int column = msDr.FieldCount;  //获取集合列数  
+                List<String> a = new List<String>();
+                while (msDr.Read())
+                {
+                    if (msDr.HasRows)
+                    {
+                        for (int i = 0; i < column; i++)
+                        {
+                            a.Add(msDr.GetString(i));
+                        }
+                    }
+                }
+                result = a.ToArray();
+                msDr.Close(); //关闭数据集
+                return result;
+            }
+
+            catch (Exception e)
+            {
+                String[] b = {};
+                Console.WriteLine(e.Data);
+                Console.WriteLine("获取查询结果集出错" + e.Message);
+                return b;
+            }
+        }
+
         public Book[] GetBookArraySerchResult(MySqlCommand myCom)    //获取书籍查询结果  
         {
             try

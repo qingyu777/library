@@ -184,11 +184,6 @@ namespace library
             // bookTypeInput
             // 
             this.bookTypeInput.FormattingEnabled = true;
-            this.bookTypeInput.Items.AddRange(new object[] {
-            "小说",
-            "生物",
-            "数学",
-            "生活"});
             this.bookTypeInput.Location = new System.Drawing.Point(463, 22);
             this.bookTypeInput.Name = "bookTypeInput";
             this.bookTypeInput.Size = new System.Drawing.Size(191, 23);

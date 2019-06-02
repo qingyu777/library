@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Drawing;
+using System.Windows.Forms;
 
 namespace library
 {
@@ -78,6 +79,7 @@ namespace library
             this.label10 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.dataGridViewForAdminSearchBorrow = new System.Windows.Forms.DataGridView();
+            dataGridViewForAdminSearchBorrow.ForeColor = Color.Black;
             this.admin_search_borrow_record_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.admin_search_borrow_book_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.admin_search_borrow_student_username = new System.Windows.Forms.DataGridViewTextBoxColumn();

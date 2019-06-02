@@ -25,6 +25,14 @@ namespace library
             this.username = yhm;
             studentUsername.Text = yhm;
             label4.Text = user_id.ToString();
+            SqlConnect c = new SqlConnect();
+            String[] bookType = c.GetArraySerchResult(c.ExcuteOrder("select distinct book_type from book", c.myCon));
+            int len = bookType.Length;
+            for (int i = 0; i < len; i++)
+            {
+                bookTypeInput.Items.Add(bookType[i]);
+            }
+            c.CloseMySqlConnection();
         }
 
         private void TabPage1_Click(object sender, EventArgs e)

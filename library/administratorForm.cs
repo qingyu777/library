@@ -19,6 +19,16 @@ namespace library
             admin_username = u;
             InitializeComponent();
             adminUsername.Text = u;
+            SqlConnect c = new SqlConnect();
+            String[] bookType = c.GetArraySerchResult(c.ExcuteOrder("select distinct book_type from book", c.myCon));
+            int len = bookType.Length;
+            for (int i = 0; i < len; i++)
+            {
+                bookTypeInput.Items.Add(bookType[i]);
+                insertBookTypeInput.Items.Add(bookType[i]);
+                updateBookTypeInput.Items.Add(bookType[i]);
+            }
+            c.CloseMySqlConnection();
         }
 
         private void Button1_Click(object sender, EventArgs e)
