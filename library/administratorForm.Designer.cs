@@ -37,13 +37,12 @@ namespace library
             this.dataGridViewForAdminSearchBook = new System.Windows.Forms.DataGridView();
             this.admin_search_book_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.admin_search_book_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.admin_search_book_author = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.admin_search_book_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.admin_search_book_author = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.admin_search_book_location = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.admin_search_book_borrow_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.admin_search_book_left_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bookLocationInput = new System.Windows.Forms.TextBox();
-            this.bookTypeInput = new System.Windows.Forms.TextBox();
             this.bookAuthorInput = new System.Windows.Forms.TextBox();
             this.bookNameInput = new System.Windows.Forms.TextBox();
             this.bookIdInput = new System.Windows.Forms.TextBox();
@@ -59,7 +58,6 @@ namespace library
             this.updateBookNumberInput = new System.Windows.Forms.TextBox();
             this.updateBookLocationInput = new System.Windows.Forms.TextBox();
             this.updateBookAuthorInput = new System.Windows.Forms.TextBox();
-            this.updateBookTypeInput = new System.Windows.Forms.TextBox();
             this.updateBookNameInput = new System.Windows.Forms.TextBox();
             this.updateBookIdIput = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
@@ -74,7 +72,6 @@ namespace library
             this.label15 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.insertBookLocationInput = new System.Windows.Forms.TextBox();
-            this.insertBookTypeInput = new System.Windows.Forms.TextBox();
             this.insertBookNameInput = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -104,6 +101,10 @@ namespace library
             this.label7 = new System.Windows.Forms.Label();
             this.adminUsername = new System.Windows.Forms.Label();
             this.menuForAdmin = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.bookTypeInput = new System.Windows.Forms.ComboBox();
+            this.insertBookTypeInput = new System.Windows.Forms.ComboBox();
+            this.updateBookTypeInput = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewForAdminSearchBook)).BeginInit();
@@ -141,9 +142,9 @@ namespace library
             // 
             this.tabPage1.BackColor = System.Drawing.Color.AliceBlue;
             this.tabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.tabPage1.Controls.Add(this.bookTypeInput);
             this.tabPage1.Controls.Add(this.dataGridViewForAdminSearchBook);
             this.tabPage1.Controls.Add(this.bookLocationInput);
-            this.tabPage1.Controls.Add(this.bookTypeInput);
             this.tabPage1.Controls.Add(this.bookAuthorInput);
             this.tabPage1.Controls.Add(this.bookNameInput);
             this.tabPage1.Controls.Add(this.bookIdInput);
@@ -171,8 +172,8 @@ namespace library
             this.dataGridViewForAdminSearchBook.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.admin_search_book_id,
             this.admin_search_book_name,
-            this.admin_search_book_author,
             this.admin_search_book_type,
+            this.admin_search_book_author,
             this.admin_search_book_location,
             this.admin_search_book_borrow_number,
             this.admin_search_book_left_number});
@@ -201,17 +202,17 @@ namespace library
             this.admin_search_book_name.ReadOnly = true;
             this.admin_search_book_name.Width = 62;
             // 
-            // admin_search_book_author
-            // 
-            this.admin_search_book_author.HeaderText = "书籍作者";
-            this.admin_search_book_author.Name = "admin_search_book_author";
-            this.admin_search_book_author.ReadOnly = true;
-            // 
             // admin_search_book_type
             // 
             this.admin_search_book_type.HeaderText = "书籍类型";
             this.admin_search_book_type.Name = "admin_search_book_type";
             this.admin_search_book_type.ReadOnly = true;
+            // 
+            // admin_search_book_author
+            // 
+            this.admin_search_book_author.HeaderText = "书籍作者";
+            this.admin_search_book_author.Name = "admin_search_book_author";
+            this.admin_search_book_author.ReadOnly = true;
             // 
             // admin_search_book_location
             // 
@@ -242,14 +243,6 @@ namespace library
             this.bookLocationInput.Name = "bookLocationInput";
             this.bookLocationInput.Size = new System.Drawing.Size(185, 25);
             this.bookLocationInput.TabIndex = 25;
-            // 
-            // bookTypeInput
-            // 
-            this.bookTypeInput.Location = new System.Drawing.Point(451, 4);
-            this.bookTypeInput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.bookTypeInput.Name = "bookTypeInput";
-            this.bookTypeInput.Size = new System.Drawing.Size(185, 25);
-            this.bookTypeInput.TabIndex = 24;
             // 
             // bookAuthorInput
             // 
@@ -334,12 +327,13 @@ namespace library
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.AliceBlue;
+            this.tabPage2.Controls.Add(this.updateBookTypeInput);
+            this.tabPage2.Controls.Add(this.insertBookTypeInput);
             this.tabPage2.Controls.Add(this.button7);
             this.tabPage2.Controls.Add(this.button5);
             this.tabPage2.Controls.Add(this.updateBookNumberInput);
             this.tabPage2.Controls.Add(this.updateBookLocationInput);
             this.tabPage2.Controls.Add(this.updateBookAuthorInput);
-            this.tabPage2.Controls.Add(this.updateBookTypeInput);
             this.tabPage2.Controls.Add(this.updateBookNameInput);
             this.tabPage2.Controls.Add(this.updateBookIdIput);
             this.tabPage2.Controls.Add(this.label22);
@@ -354,7 +348,6 @@ namespace library
             this.tabPage2.Controls.Add(this.label15);
             this.tabPage2.Controls.Add(this.button2);
             this.tabPage2.Controls.Add(this.insertBookLocationInput);
-            this.tabPage2.Controls.Add(this.insertBookTypeInput);
             this.tabPage2.Controls.Add(this.insertBookNameInput);
             this.tabPage2.Controls.Add(this.label12);
             this.tabPage2.Controls.Add(this.label11);
@@ -371,7 +364,7 @@ namespace library
             // button7
             // 
             this.button7.Location = new System.Drawing.Point(768, 69);
-            this.button7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button7.Margin = new System.Windows.Forms.Padding(4);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(100, 40);
             this.button7.TabIndex = 26;
@@ -413,14 +406,6 @@ namespace library
             this.updateBookAuthorInput.Name = "updateBookAuthorInput";
             this.updateBookAuthorInput.Size = new System.Drawing.Size(159, 25);
             this.updateBookAuthorInput.TabIndex = 22;
-            // 
-            // updateBookTypeInput
-            // 
-            this.updateBookTypeInput.Location = new System.Drawing.Point(548, 142);
-            this.updateBookTypeInput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.updateBookTypeInput.Name = "updateBookTypeInput";
-            this.updateBookTypeInput.Size = new System.Drawing.Size(159, 25);
-            this.updateBookTypeInput.TabIndex = 21;
             // 
             // updateBookNameInput
             // 
@@ -544,14 +529,6 @@ namespace library
             this.insertBookLocationInput.Name = "insertBookLocationInput";
             this.insertBookLocationInput.Size = new System.Drawing.Size(180, 25);
             this.insertBookLocationInput.TabIndex = 7;
-            // 
-            // insertBookTypeInput
-            // 
-            this.insertBookTypeInput.Location = new System.Drawing.Point(140, 106);
-            this.insertBookTypeInput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.insertBookTypeInput.Name = "insertBookTypeInput";
-            this.insertBookTypeInput.Size = new System.Drawing.Size(180, 25);
-            this.insertBookTypeInput.TabIndex = 6;
             // 
             // insertBookNameInput
             // 
@@ -838,6 +815,36 @@ namespace library
             this.menuForAdmin.Name = "menuForAdmin";
             this.menuForAdmin.Size = new System.Drawing.Size(61, 4);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // bookTypeInput
+            // 
+            this.bookTypeInput.FormattingEnabled = true;
+            this.bookTypeInput.Location = new System.Drawing.Point(451, 7);
+            this.bookTypeInput.Name = "bookTypeInput";
+            this.bookTypeInput.Size = new System.Drawing.Size(185, 23);
+            this.bookTypeInput.TabIndex = 28;
+            // 
+            // insertBookTypeInput
+            // 
+            this.insertBookTypeInput.FormattingEnabled = true;
+            this.insertBookTypeInput.Location = new System.Drawing.Point(140, 109);
+            this.insertBookTypeInput.Name = "insertBookTypeInput";
+            this.insertBookTypeInput.Size = new System.Drawing.Size(180, 23);
+            this.insertBookTypeInput.TabIndex = 27;
+            // 
+            // updateBookTypeInput
+            // 
+            this.updateBookTypeInput.FormattingEnabled = true;
+            this.updateBookTypeInput.Location = new System.Drawing.Point(548, 144);
+            this.updateBookTypeInput.Name = "updateBookTypeInput";
+            this.updateBookTypeInput.Size = new System.Drawing.Size(159, 23);
+            this.updateBookTypeInput.TabIndex = 28;
+            // 
             // AdministratorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -881,7 +888,6 @@ namespace library
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox insertBookLocationInput;
-        private System.Windows.Forms.TextBox insertBookTypeInput;
         private System.Windows.Forms.TextBox insertBookNameInput;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
@@ -892,7 +898,6 @@ namespace library
         private System.Windows.Forms.TextBox updateBookNumberInput;
         private System.Windows.Forms.TextBox updateBookLocationInput;
         private System.Windows.Forms.TextBox updateBookAuthorInput;
-        private System.Windows.Forms.TextBox updateBookTypeInput;
         private System.Windows.Forms.TextBox updateBookNameInput;
         private System.Windows.Forms.TextBox updateBookIdIput;
         private System.Windows.Forms.Label label22;
@@ -906,7 +911,6 @@ namespace library
         private System.Windows.Forms.TextBox insertBookNumberInput;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox bookLocationInput;
-        private System.Windows.Forms.TextBox bookTypeInput;
         private System.Windows.Forms.TextBox bookAuthorInput;
         private System.Windows.Forms.TextBox bookNameInput;
         private System.Windows.Forms.TextBox bookIdInput;
@@ -944,5 +948,9 @@ namespace library
         private DataGridViewTextBoxColumn admin_search_book_borrow_number;
         private DataGridViewTextBoxColumn admin_search_book_left_number;
         private Button button7;
+        private ContextMenuStrip contextMenuStrip1;
+        private ComboBox bookTypeInput;
+        private ComboBox updateBookTypeInput;
+        private ComboBox insertBookTypeInput;
     }
 }

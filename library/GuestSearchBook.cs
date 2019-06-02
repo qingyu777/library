@@ -114,5 +114,10 @@ namespace library
         {
 
         }
+
+        private void BookTypeInput_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -245,5 +245,10 @@ namespace library
                 MessageBox.Show("没有这本书，不存在此id");
             c.CloseMySqlConnection();
         }
+
+        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
