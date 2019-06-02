@@ -22,10 +22,8 @@ namespace library
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            usernameInput.Text = usernameInput.Text.Replace("'", " ").Trim();   //防止sql注入
-            passwardInput.Text = passwardInput.Text.Replace("'", " ").Trim();
-            usernameInput.Text = usernameInput.Text.Replace("#", " ").Trim();   //防止sql注入
-            passwardInput.Text = passwardInput.Text.Replace("#", " ").Trim();
+            usernameInput.Text = usernameInput.Text.Trim().Replace("'", "").Replace("#", "").Replace("\\", "");   //防止sql注入
+            passwardInput.Text = passwardInput.Text.Trim().Replace("'", "").Replace("#", "").Replace("\\", "");   //防止sql注入
             SqlConnect c = new SqlConnect();
 
             //"select * FROM admin where admin_username = '" + textBox1.Text + "'and admin_passward ='' or 'jjj'='jjj'"
@@ -50,10 +48,8 @@ namespace library
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            usernameInput.Text = usernameInput.Text.Replace("'", " ").Trim();   //防止sql注入
-            passwardInput.Text = passwardInput.Text.Replace("'", " ").Trim();
-            usernameInput.Text = usernameInput.Text.Replace("#", " ").Trim();   //防止sql注入
-            passwardInput.Text = passwardInput.Text.Replace("#", " ").Trim();
+            usernameInput.Text = usernameInput.Text.Trim().Replace("'", "").Replace("#", "").Replace("\\", "");   //防止sql注入
+            passwardInput.Text = passwardInput.Text.Trim().Replace("'", "").Replace("#", "").Replace("\\", "");   //防止sql注入
             SqlConnect c = new SqlConnect();
 
             //"select * FROM admin where admin_username = '" + textBox1.Text + "'and admin_passward ='' or 'jjj'='jjj'"
